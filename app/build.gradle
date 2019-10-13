@@ -1,0 +1,122 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'realm-android'
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    signingConfigs {
+        config {
+            keyAlias 'sha'
+            keyPassword '123456sh@b@n'
+            storeFile file('keystores/config.jks')
+            storePassword '123456sh@b@n'
+        }
+    }
+    compileSdkVersion Config.compileSdk
+    defaultConfig {
+        applicationId "com.restaurant.app"
+        minSdkVersion Config.minSdk
+        targetSdkVersion Config.targetSdk
+        versionCode 1
+        versionName "0.1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // For vector graphic support
+        vectorDrawables.useSupportLibrary = true
+
+        // For multiDex
+        multiDexEnabled true
+
+        // annotationProcessor
+        android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+
+        // oneSignal
+        manifestPlaceholders = [onesignal_app_id: "28e0a3c8-e3db-4071-99af-7c881f1ffeb5",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            useProguard false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+
+            buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlProd}\"")
+        }
+
+        debug {
+            signingConfig signingConfigs.config
+            testCoverageEnabled true
+            buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlDev}\"")
+        }
+
+    }
+    // Java 8 features, i.e Lambda...
+    compileOptions {
+        targetCompatibility Config.javaVersion
+        sourceCompatibility Config.javaVersion
+    }
+    // solves Error converting bytecode to dex
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/MANIFEST.MF'
+    }
+    useLibrary 'org.apache.http.legacy'
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation project(Module.presentation)
+    implementation project(Module.data)
+    implementation project(Module.restaurantsList)
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation Deps.parceler
+    kapt Deps.parceler_annotaitionProcessor
+
+    implementation Deps.retrofit_adapter
+    implementation Deps.retrofit_converter
+    implementation Deps.retrofit_runtime
+
+    implementation Deps.rx_android
+    implementation Deps.rx_java
+    implementation Deps.rx_kotlin
+    implementation Deps.rx_permissions
+
+
+}

@@ -1,0 +1,40 @@
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinAndroidExtensions
+apply plugin: Plugins.kotlinKapt
+
+android {
+    compileSdkVersion Config.compileSdk
+
+    defaultConfig {
+        minSdkVersion Config.minSdk
+        targetSdkVersion Config.targetSdk
+        versionCode Config.versionCode
+        versionName Config.versionName
+        vectorDrawables.useSupportLibrary = true
+    }
+}
+
+dependencies {
+    implementation CoreLibraries.kotlin
+    kapt Libraries.dagger2Compiler
+    kapt Libraries.dagger2AndroidProcessor
+    testAnnotationProcessor Libraries.dagger2Compiler
+    compileOnly Libraries.javaxAnnotation
+    kapt Libraries.roomCompiler
+
+    // Testing
+    testImplementation TestLibraries.jUnit
+    androidTestImplementation TestLibraries.runnner
+    androidTestImplementation TestLibraries.espressoCore
+    testImplementation TestLibraries.mockitoCore
+    androidTestImplementation TestLibraries.mockitoAndroid
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'org.jetbrains.kotlin') {
+            details.useVersion Versions.kotlinVersion
+        }
+    }
+}

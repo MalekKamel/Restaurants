@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:minWidth="200dp"
+    android:minHeight="@dimen/minHeight_info_dialog"
+    android:paddingTop="@dimen/common_margin"
+    android:background="@drawable/rounded_corners"
+    android:paddingBottom="@dimen/common_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <restaurant.common.presentation.ui.custom.AppTextView
+            android:id="@+id/tv_message"
+            tools:text="Message"
+            android:textSize="@dimen/common_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_info_dialog" />
+
+        <restaurant.common.presentation.ui.custom.CustomBtn
+            android:id="@+id/btn_close"
+            android:text="@string/dismiss"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_marginStart="@dimen/margin_login_btn_start_end"
+            android:layout_marginEnd="@dimen/margin_login_btn_start_end"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>

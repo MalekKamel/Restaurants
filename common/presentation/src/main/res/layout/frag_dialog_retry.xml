@@ -1,0 +1,57 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/minHeight_info_dialog"
+    android:minWidth="200dp"
+    android:paddingTop="@dimen/common_margin"
+    android:paddingBottom="@dimen/common_margin"
+    android:background="@drawable/rounded_corners"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <restaurant.common.presentation.ui.custom.AppTextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/semi_red"
+            android:textSize="@dimen/common_text_size" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_space" />
+
+
+        <restaurant.common.presentation.ui.custom.CustomBtn
+            android:id="@+id/btn_retry"
+            android:text="@string/retry"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/width_big"
+            android:layout_height="@dimen/height_mid"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/common_margin"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_space" />
+
+        <restaurant.common.presentation.ui.custom.CustomBtn
+            android:id="@+id/btn_close"
+            android:text="@string/dismiss"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_blue"
+            android:background="@color/transparent"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

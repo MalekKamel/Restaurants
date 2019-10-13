@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion Config.compileSdk
+
+    defaultConfig {
+        minSdkVersion Config.minSdk
+        targetSdkVersion Config.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+
+    }
+
+    buildTypes {
+
+        release {
+            buildConfigField("String", "API_BASE_URL", "\"https://opentable.herokuapp.com/api/\"")
+
+            buildConfigField("String", "THE_MOVIE_DB_API_TOKEN", "\"6b70e9dda42077a0fe43b4ba1c5fd4f0\"")
+
+        }
+
+        debug {
+
+            buildConfigField("String", "API_BASE_URL", "\"https://opentable.herokuapp.com/api/\"")
+
+            buildConfigField("String", "THE_MOVIE_DB_API_TOKEN", "\"6b70e9dda42077a0fe43b4ba1c5fd4f0\"")
+
+        }
+
+    }
+
+}
+
+dependencies {
+    implementation project(Module.presentation)
+    implementation project(Module.data)
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation Deps.retrofit_adapter
+    implementation Deps.retrofit_converter
+    implementation Deps.retrofit_runtime
+
+    implementation Deps.rx_android
+    implementation Deps.rx_java
+    implementation Deps.rx_kotlin
+    implementation Deps.rx_permissions
+
+
+}

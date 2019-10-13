@@ -1,0 +1,5 @@
+R_DEF: Internal format may change without notice
+local
+id coordinatorLayout
+id tvTitle
+layout frag_splash
