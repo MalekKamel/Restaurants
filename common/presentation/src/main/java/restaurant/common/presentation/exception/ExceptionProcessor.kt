@@ -1,6 +1,7 @@
 package restaurant.common.presentation.exception
 
 import android.text.TextUtils
+import com.google.gson.GsonBuilder
 import restaurants.common.core.R
 import restaurant.common.presentation.exception.handler.http.HttpExceptionInfo
 import restaurant.common.presentation.exception.handler.http.ServerErrorHandler
@@ -80,7 +81,7 @@ class ExceptionProcessor private constructor() {
     }
 
     private fun showOriginalHttpMessage(body: String, presenter: ExceptionPresenter, throwable: Throwable) {
-        val contract = RetrofitUtil.parseHttpExceptionModel(body)
+        val contract = parseHttpExceptionModel(body)
 
         if (TextUtils.isEmpty(contract.message)) {
             unknownException(presenter, throwable)
@@ -88,6 +89,10 @@ class ExceptionProcessor private constructor() {
         }
 
         presenter.view.showErrorInFlashBar(contract.message)
+    }
+
+    fun parseHttpExceptionModel(body: String): HttpExceptionContract {
+        return GsonBuilder().create().fromJson(body, HttpExceptionContract::class.java)
     }
 
     private fun handleNonHttpException(

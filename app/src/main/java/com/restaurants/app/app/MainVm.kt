@@ -1,4 +1,4 @@
-package com.restaurants.app.navhost
+package com.restaurants.app.app
 
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module

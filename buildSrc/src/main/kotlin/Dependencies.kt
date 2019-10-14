@@ -153,3 +153,8 @@ object Plugins {
     const val kotlinAndroidExtensions = "kotlin-android-extensions"
     const val kotlinKapt = "kotlin-kapt"
 }
+
+object GradleName {
+    const val common = "common.gradle"
+    const val commonAndroidLib = "common-android-library.gradle"
+}

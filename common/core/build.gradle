@@ -1,55 +1,17 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-
-android {
-    compileSdkVersion Config.compileSdk
-
-    defaultConfig {
-        minSdkVersion Config.minSdk
-        targetSdkVersion Config.targetSdk
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
-
-    }
-
-}
+apply from: "$rootDir/${GradleName.commonAndroidLib}"
 
 dependencies {
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    testApi Deps.test_junit
-    testApi Deps.androidx_junit
-    testApi Deps.androidx_espressoCore
-    testApi Deps.koin_test
-    testApi Deps.test_jUnitParams
-    testApi Deps.test_kotlinTestJunit5
-    testApi Deps.test_kotlinTestExtKoin
-    androidTestApi(Deps.test_espressoCore, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-
     api Deps.androidx_appCompat
     api Deps.androidx_core
-
-    implementation Deps.retrofit_adapter
-    implementation Deps.retrofit_converter
-    implementation Deps.retrofit_runtime
 
     api Deps.materialDesign
 
     implementation Deps.flashBar
 
-    implementation Deps.rx_android
-    implementation Deps.rx_java
-    implementation Deps.rx_kotlin
-    implementation Deps.rx_permissions
+    api Deps.rx_android
+    api Deps.rx_java
+    api Deps.rx_kotlin
+    api Deps.rx_permissions
 
     implementation Deps.androidx_lifeCycleCommonJava8
 

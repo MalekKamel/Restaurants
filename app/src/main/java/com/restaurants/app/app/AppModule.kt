@@ -1,4 +1,4 @@
-package com.restaurants.app.navhost.app
+package com.restaurants.app.app
 
 import android.preference.PreferenceManager
 import com.restaurants.app.BuildConfig

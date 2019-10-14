@@ -1,4 +1,4 @@
-package com.restaurants.app.navhost
+package com.restaurants.app.app
 
 import android.os.Bundle
 import android.widget.FrameLayout

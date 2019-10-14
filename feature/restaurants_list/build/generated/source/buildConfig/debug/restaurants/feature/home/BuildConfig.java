@@ -14,8 +14,5 @@ public final class BuildConfig {
   public static final String BUILD_TYPE = "debug";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 1;
-  public static final String VERSION_NAME = "1.0";
-  // Fields from build type: debug
-  public static final String API_BASE_URL = "https://opentable.herokuapp.com/api/";
-  public static final String THE_MOVIE_DB_API_TOKEN = "6b70e9dda42077a0fe43b4ba1c5fd4f0";
+  public static final String VERSION_NAME = "1.0.0";
 }

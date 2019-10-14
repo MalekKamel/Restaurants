@@ -1,4 +1,4 @@
-package com.restaurants.app.navhost.app
+package com.restaurants.app.app
 
 import android.annotation.SuppressLint
 import android.app.Application
