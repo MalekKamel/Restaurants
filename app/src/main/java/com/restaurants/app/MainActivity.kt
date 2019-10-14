@@ -1,8 +1,7 @@
-package com.restaurants.app.app
+package com.restaurants.app
 
 import android.os.Bundle
 import android.widget.FrameLayout
-import com.restaurants.app.R
 import com.sha.kamel.navigator.FragmentNavigator
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurants.feature.home.search.RestaurantsFrag

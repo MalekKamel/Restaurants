@@ -1,10 +1,9 @@
-package com.restaurants.app.app
+package com.restaurants.app
 
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import androidx.annotation.StringRes
-import com.restaurants.app.R
 import com.sha.kamel.navigator.NavigatorOptions
 import org.koin.core.context.loadKoinModules
 import restaurants.common.core.koin.KoinHelper

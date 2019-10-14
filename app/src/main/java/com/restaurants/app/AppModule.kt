@@ -1,7 +1,6 @@
-package com.restaurants.app.app
+package com.restaurants.app
 
 import android.preference.PreferenceManager
-import com.restaurants.app.BuildConfig
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext

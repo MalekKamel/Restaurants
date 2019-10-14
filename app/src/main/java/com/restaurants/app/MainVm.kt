@@ -1,4 +1,4 @@
-package com.restaurants.app.app
+package com.restaurants.app
 
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
