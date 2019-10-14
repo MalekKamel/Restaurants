@@ -3,15 +3,11 @@ apply from: "$rootDir/${GradleName.commonAndroidLib}"
 dependencies {
     api project(Module.core)
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     api Deps.retrofit_adapter
     api Deps.retrofit_converter
     api Deps.retrofit_runtime
 
     api Deps.okHttp_runtime
     api Deps.okHttp_interceptor
-
 
 }

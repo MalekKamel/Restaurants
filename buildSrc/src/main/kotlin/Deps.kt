@@ -1,24 +1,3 @@
-import org.gradle.api.JavaVersion
-
-object Config {
-    const val minSdk = 21
-    const val compileSdk = 28
-    const val targetSdk = 28
-    val javaVersion = JavaVersion.VERSION_1_8
-    const val versionCode = 1
-    const val versionName = "1.0.0"
-    const val baseUrlProd = "https://opentable.herokuapp.com/api/"
-    const val baseUrlDev = "https://opentable.herokuapp.com/api/"
-
-}
-
-object Module {
-    const val presentation = ":common:presentation"
-    const val core = ":common:core"
-    const val data = ":common:data"
-    const val restaurantsList = ":feature:restaurants_list"
-}    
-
 
 object Versions {
 
@@ -59,7 +38,6 @@ object Versions {
     const val androidx_espressoCore = "3.2.0"
     const val androidx_coreKtx = "1.1.0"
     const val androidx_paging = "2.0.0-rc01"
-
 
 }
 
@@ -144,17 +122,4 @@ object Deps {
 
     const val flashBar = "com.andrognito.flashbar:flashbar:${Versions.flashBar}"
 
-}
-
-object Plugins {
-    const val androidApplication = "com.android.application"
-    const val androidLibrary = "com.android.library"
-    const val kotlinAndroid = "kotlin-android"
-    const val kotlinAndroidExtensions = "kotlin-android-extensions"
-    const val kotlinKapt = "kotlin-kapt"
-}
-
-object GradleName {
-    const val common = "common.gradle"
-    const val commonAndroidLib = "common-android-library.gradle"
 }
