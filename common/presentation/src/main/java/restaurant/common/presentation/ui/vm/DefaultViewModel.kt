@@ -1,6 +1,6 @@
 package restaurant.common.presentation.ui.vm
 
-import restaurant.common.presentation.DataManager
+import restaurants.common.data.DataManager
 
 
 /**

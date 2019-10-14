@@ -4,6 +4,7 @@ import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
 import restaurants.common.core.util.ThreadUtil
 import restaurant.common.presentation.ui.vm.BaseViewModel
+import restaurants.common.data.DataManager
 
 class LoadingDialog(var isCancellable: Boolean = false) : BaseDialogFrag<LoadingVm>() {
 
@@ -15,10 +16,9 @@ class LoadingDialog(var isCancellable: Boolean = false) : BaseDialogFrag<Loading
         }
     }
 
-
 }
 
-class LoadingVm(dataManager: restaurant.common.presentation.DataManager) : BaseViewModel(dataManager)
+class LoadingVm(dataManager: DataManager) : BaseViewModel(dataManager)
 
 object LoadingDialogHelper {
     var instances: MutableList<LoadingDialog?> = mutableListOf()

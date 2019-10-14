@@ -12,14 +12,14 @@ class RxExceptionInterceptor(private val presenter: ExceptionPresenter) : Consum
 
     override fun accept(throwable: Throwable) {
         throwable.printStackTrace()
-        presenter.view.hideLoading()
+        presenter.hideLoading()
 
         // inline handling of the error
         if (presenter.requestInfo.inlineHandling != null &&
-                presenter.requestInfo.inlineHandling!!.invoke(throwable as HttpException))
+                presenter.requestInfo.inlineHandling!!(throwable))
             return
 
-        ExceptionProcessor.instance.process(throwable, presenter)
+        ExceptionProcessor.process(throwable, presenter)
     }
 
 

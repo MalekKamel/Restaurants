@@ -9,7 +9,7 @@ class OutOfMemoryErrorHandler : NonHttpExceptionHandler() {
     }
 
     override fun handle() {
-        presenter.view.showErrorInFlashBar(R.string.no_memory_free_up_space)
+        presenter.showErrorRes(R.string.no_memory_free_up_space)
 
     }
 }

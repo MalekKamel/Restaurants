@@ -1,22 +1,22 @@
 package com.restaurants.app
 
-import restaurants.feature.home.search.SearchVm
+import restaurants.feature.home.restaurants.RestaurantsVm
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.koin.java.KoinJavaComponent
 
 
-class SearchVmTest : BaseUnitTest() {
+class RestaurantsVmTest : BaseUnitTest() {
 
     @Test
     fun `search query is not valid`() {
-        assertEquals(KoinJavaComponent.get(SearchVm::class.java)
+        assertEquals(KoinJavaComponent.get(RestaurantsVm::class.java)
                 .isValidSearchString(""), false)
     }
 
     @Test
     fun `search query is valid`() {
-        assert(KoinJavaComponent.get(SearchVm::class.java)
+        assert(KoinJavaComponent.get(RestaurantsVm::class.java)
                 .isValidSearchString("ff"))
     }
 
@@ -24,7 +24,7 @@ class SearchVmTest : BaseUnitTest() {
     @Test
     fun `test LiveData`() {
 
-        assert(KoinJavaComponent.get(SearchVm::class.java)
+        assert(KoinJavaComponent.get(RestaurantsVm::class.java)
                 .isValidSearchString("ff"))
     }
 

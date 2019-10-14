@@ -1,4 +1,4 @@
-package restaurants.feature.home.search
+package restaurants.feature.home.restaurants
 
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_restaurant.view.*

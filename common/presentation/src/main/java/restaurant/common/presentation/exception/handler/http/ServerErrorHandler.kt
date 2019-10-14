@@ -10,7 +10,7 @@ class ServerErrorHandler : HttpExceptionHandler() {
     }
 
     override fun handle() {
-        presenter.view.showErrorInFlashBar(R.string.oops_something_went_wrong)
+        presenter.showErrorRes(R.string.oops_something_went_wrong)
     }
 
 }

@@ -19,12 +19,12 @@ class IoExceptionHandler : NonHttpExceptionHandler() {
     override fun handle() {
 
         if (throwable is SocketTimeoutException) {
-            presenter.view.showErrorInFlashBar(R.string.socket_timeout_exception)
+            presenter.showErrorRes(R.string.socket_timeout_exception)
             return
         }
 
         if (throwable is UnknownHostException) {
-            presenter.view.showErrorInFlashBar(R.string.offline_internet)
+            presenter.showErrorRes(R.string.offline_internet)
             return
         }
 
@@ -33,6 +33,6 @@ class IoExceptionHandler : NonHttpExceptionHandler() {
             return
         }
 
-        presenter.view.showErrorInFlashBar(R.string.offline_internet)
+        presenter.showErrorRes(R.string.offline_internet)
     }
 }

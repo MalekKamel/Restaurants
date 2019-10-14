@@ -10,7 +10,6 @@ import restaurant.common.presentation.ui.view.BaseView
 abstract class HttpExceptionHandler {
 
     protected lateinit var info: HttpExceptionInfo
-    protected lateinit var view: BaseView
     protected lateinit var throwable: Throwable
     protected lateinit var presenter: ExceptionPresenter
 
@@ -24,7 +23,6 @@ abstract class HttpExceptionHandler {
     fun handle(info: HttpExceptionInfo) {
         this.info = info
         this.throwable = info.throwable
-        this.view = info.presenter.view
         this.presenter = info.presenter
         handle()
     }

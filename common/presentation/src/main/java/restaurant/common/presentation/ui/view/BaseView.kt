@@ -46,7 +46,7 @@ interface BaseView {
         }
     }
 
-    fun showLoadingDialog() {
+    fun showLoading() {
         ThreadUtil.runOnUiThread {
 
             if (activity() == null) return@runOnUiThread

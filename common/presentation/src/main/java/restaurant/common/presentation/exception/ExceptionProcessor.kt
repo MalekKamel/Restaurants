@@ -17,7 +17,7 @@ import retrofit2.HttpException
  * Created by Sha on 10/9/17.
  */
 
-class ExceptionProcessor private constructor() {
+object ExceptionProcessor{
 
     private val httpHandlers = listOf(
             TokenExpiredHandler(),
@@ -88,10 +88,10 @@ class ExceptionProcessor private constructor() {
             return
         }
 
-        presenter.view.showErrorInFlashBar(contract.message)
+        presenter.showError(contract.message)
     }
 
-    fun parseHttpExceptionModel(body: String): HttpExceptionContract {
+    private fun parseHttpExceptionModel(body: String): HttpExceptionContract {
         return GsonBuilder().create().fromJson(body, HttpExceptionContract::class.java)
     }
 
@@ -115,16 +115,10 @@ class ExceptionProcessor private constructor() {
 
     private fun unknownException(presenter: ExceptionPresenter, throwable: Throwable) {
         // Default handling, show generic problem.
-        presenter.view.showErrorInFlashBar(R.string.oops_something_went_wrong)
+        presenter.showErrorRes(R.string.oops_something_went_wrong)
 
         // Report Crashlytics to handle this exception in the future
         CrashlyticsUtil.log(throwable)
     }
-
-    companion object {
-
-        var instance = ExceptionProcessor()
-    }
-
 
 }

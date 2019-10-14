@@ -3,7 +3,7 @@ package restaurants.feature.splash
 import restaurant.common.presentation.ui.vm.BaseViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import restaurant.common.presentation.DataManager
+import restaurants.common.data.DataManager
 
 /**
  * Created by Sha on 9/15/17.

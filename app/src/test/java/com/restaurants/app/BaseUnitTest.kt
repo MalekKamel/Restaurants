@@ -3,7 +3,7 @@ package com.restaurants.app
 import android.content.Context
 import restaurants.common.shared.koin.appModule
 import restaurants.common.shared.util.SharedPref
-import restaurants.feature.home.search.searchModule
+import restaurants.feature.home.restaurants.searchModule
 import org.junit.Before
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin

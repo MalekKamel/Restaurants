@@ -1,4 +1,4 @@
-package restaurants.feature.home.search
+package restaurants.feature.home.restaurants
 
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
@@ -8,12 +8,12 @@ import restaurants.common.core.util.ThreadUtil
 import org.koin.android.viewmodel.ext.android.viewModel
 import restaurants.common.core.util.linearLayoutManager
 import restaurants.feature.home.R
-import restaurants.feature.home.search.di.injectFeature
+import restaurants.feature.home.restaurants.di.injectFeature
 
 
-class RestaurantsFrag : BaseFrag<SearchVm>() {
+class RestaurantsFrag : BaseFrag<RestaurantsVm>() {
 
-    override val vm: SearchVm by viewModel()
+    override val vm: RestaurantsVm by viewModel()
     override var layoutId: Int = R.layout.frag_search
     override var hasSwipeRefresh: Boolean = true
 
@@ -46,7 +46,7 @@ class RestaurantsFrag : BaseFrag<SearchVm>() {
         }
     }
 
-    override fun showLoadingDialog() {
+    override fun showLoading() {
         ThreadUtil.runOnUiThread { activity!!.findViewById<SwipeRefreshLayout>(R.id.swipeRefresh).isRefreshing = true }
     }
 

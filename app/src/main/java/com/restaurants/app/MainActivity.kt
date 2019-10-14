@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import com.sha.kamel.navigator.FragmentNavigator
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurants.feature.home.search.RestaurantsFrag
+import restaurants.feature.home.restaurants.RestaurantsFrag
 
 class MainActivity : BaseActivity<MainVm>() {
 

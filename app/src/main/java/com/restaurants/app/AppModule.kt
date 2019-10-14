@@ -7,7 +7,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import okhttp3.logging.HttpLoggingInterceptor
-import restaurant.common.presentation.DataManager
+import restaurants.common.data.DataManager
 import restaurants.common.data.rx.SchedulerProvider
 import restaurants.common.data.rx.SchedulerProviderImpl
 import restaurants.common.data.pref.SharedPref
@@ -41,13 +41,12 @@ val appModule = module {
         val builder = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
                 .addInterceptor(get<TokenInterceptor>())
-                .connectTimeout(60, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS)
                 .writeTimeout(60, TimeUnit.SECONDS)
         builder.build()
     }
 
-    single { DataManager(get(), get(), get()) }
+    single { DataManager(get(), get()) }
 
     single { TokenInterceptor(get()) }
 

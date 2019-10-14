@@ -1,30 +1,21 @@
 package restaurant.common.presentation.exception
 
-import restaurant.common.presentation.ui.StatusItem
+import restaurant.common.presentation.rx.RxRequester
 import restaurants.common.data.rx.RequestInfo
-
-import restaurant.common.presentation.ui.view.BaseView
 
 /**
  * Created by Sha on 10/9/17.
  */
 
-class ExceptionPresenter(var requestInfo: RequestInfo) {
-    lateinit var view: BaseView
-    lateinit var showMessageInFlashBar: (StatusItem) -> Unit
-
-    val retryCallback: () -> Unit
-        get() = requestInfo.retryCallback
-
-    fun setView(view: BaseView): ExceptionPresenter {
-        this.view = view
-        return this
+data class ExceptionPresenter(
+        val requestInfo: RequestInfo,
+        val requester: RxRequester,
+        val showError: (String) -> Unit,
+        val showErrorRes: (Int) -> Unit,
+        val showLoading: () -> Unit,
+        val hideLoading: () -> Unit
+) {
+    fun retryRequest() {
+        requestInfo.retryCallback()
     }
-
-    fun setShowMessageInFlashBar(showMessageInFlashBar: (StatusItem) -> Unit): ExceptionPresenter {
-        this.showMessageInFlashBar = showMessageInFlashBar
-        return this
-    }
-
-
 }

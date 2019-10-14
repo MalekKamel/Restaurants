@@ -1,7 +1,7 @@
-package restaurants.feature.home.search.di
+package restaurants.feature.home.restaurants.di
 
 import org.koin.core.context.loadKoinModules
-import restaurants.feature.home.search.searchModule
+import restaurants.feature.home.restaurants.searchModule
 
 fun injectFeature() = loadFeature
 

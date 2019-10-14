@@ -1,14 +1,12 @@
 package restaurants.common.data.rx
 
-import retrofit2.HttpException
-
 data class RequestInfo(
-        var inlineHandling: ((HttpException) -> Boolean)? = null,
+        var inlineHandling: ((Throwable) -> Boolean)? = null,
         var retryCallback: () -> Unit = {},
         var showLoading: Boolean = true
 ) {
 
-    fun inlineHandling(inlineHandling: ((HttpException) -> Boolean)?): RequestInfo {
+    fun inlineHandling(inlineHandling: ((Throwable) -> Boolean)?): RequestInfo {
         this.inlineHandling = inlineHandling
         return this
     }

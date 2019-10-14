@@ -1,0 +1,3 @@
+package restaurant.common.presentation.exception.handler
+
+interface ExceptionHandler

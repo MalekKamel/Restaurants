@@ -1,5 +1,7 @@
 package restaurant.common.presentation.exception.handler.http
 
+import io.reactivex.Flowable
+
 /**
  * Created by Sha on 10/9/17.
  */
@@ -11,11 +13,10 @@ class TokenExpiredHandler : HttpExceptionHandler() {
     }
 
     override fun handle() {
-//            view.baseViewModel()!!
-//                    .refreshToken() {
-//                       //  retry the current request
-//                        presenter.retryCallback()
-//                    }
+//        presenter.requester.request<*> { /* call refresh token request here */ }
+//                .subscribe {
+//                    presenter.retryRequest()
+//                }
     }
 
 }
