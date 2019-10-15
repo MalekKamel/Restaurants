@@ -15,7 +15,6 @@ import restaurants.common.data.rx.SchedulerProviderImpl
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
 
 val appModule = module {
 
@@ -40,8 +39,6 @@ val appModule = module {
         val builder = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
                 .addInterceptor(get<TokenInterceptor>())
-                .readTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.SECONDS)
         builder.build()
     }
 
