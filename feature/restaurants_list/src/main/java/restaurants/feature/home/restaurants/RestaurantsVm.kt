@@ -1,11 +1,11 @@
 package restaurants.feature.home.restaurants
 
+import com.sha.rxrequester.RequestInfo
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.data.DataManager
 import restaurants.common.data.model.Restaurant
-import com.sha.rxrequester.RequestInfo
 import restaurants.common.core.util.disposeBy
 import restaurants.common.data.model.toPresentation
 

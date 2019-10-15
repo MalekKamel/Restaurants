@@ -2,7 +2,6 @@ apply from: "$rootDir/${GradleName.commonAndroidLib}"
 
 dependencies {
     api project(Module.data)
-    api project(':common:rxrequester')
 
     implementation Deps.androidx_appCompat
     implementation Deps.androidx_coreKtx
@@ -15,6 +14,7 @@ dependencies {
 
     implementation Deps.sha_formValidator
     api Deps.sha_navigator
+    api Deps.sha_rxRequester
 
     api Deps.sdp
     api Deps.ssp
