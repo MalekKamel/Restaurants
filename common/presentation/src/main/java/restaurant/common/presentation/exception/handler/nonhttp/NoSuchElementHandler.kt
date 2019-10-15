@@ -9,7 +9,7 @@ class NoSuchElementHandler : NonHttpExceptionHandler() {
         return listOf<Class<*>>(NoSuchElementException::class.java)
     }
 
-    override fun handle() {
-        presenter.showErrorRes(R.string.no_data_entered_yet)
+    override fun handle(info: NonHttpExceptionInfo) {
+        info.presenter.showErrorRes(R.string.no_data_entered_yet)
     }
 }

@@ -16,23 +16,23 @@ class IoExceptionHandler : NonHttpExceptionHandler() {
         return listOf<Class<*>>(IOException::class.java)
     }
 
-    override fun handle() {
+    override fun handle(info: NonHttpExceptionInfo) {
 
-        if (throwable is SocketTimeoutException) {
-            presenter.showErrorRes(R.string.socket_timeout_exception)
+        if (info.throwable is SocketTimeoutException) {
+            info.presenter.showErrorRes(R.string.socket_timeout_exception)
             return
         }
 
-        if (throwable is UnknownHostException) {
-            presenter.showErrorRes(R.string.offline_internet)
+        if (info.throwable is UnknownHostException) {
+            info.presenter.showErrorRes(R.string.offline_internet)
             return
         }
 
-        if (throwable is ConnectionShutdownException) {
+        if (info.throwable is ConnectionShutdownException) {
             // show nothing
             return
         }
 
-        presenter.showErrorRes(R.string.offline_internet)
+        info.presenter.showErrorRes(R.string.offline_internet)
     }
 }

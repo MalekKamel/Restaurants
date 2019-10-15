@@ -8,8 +8,8 @@ class OutOfMemoryErrorHandler : NonHttpExceptionHandler() {
         return listOf<Class<*>>(OutOfMemoryError::class.java)
     }
 
-    override fun handle() {
-        presenter.showErrorRes(R.string.no_memory_free_up_space)
+    override fun handle(info: NonHttpExceptionInfo) {
+        info.presenter.showErrorRes(R.string.no_memory_free_up_space)
 
     }
 }

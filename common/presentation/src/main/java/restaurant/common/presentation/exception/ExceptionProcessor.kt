@@ -2,14 +2,9 @@ package restaurant.common.presentation.exception
 
 import android.text.TextUtils
 import com.google.gson.GsonBuilder
-import restaurants.common.core.R
 import restaurant.common.presentation.exception.handler.http.HttpExceptionInfo
-import restaurant.common.presentation.exception.handler.http.ServerErrorHandler
-import restaurant.common.presentation.exception.handler.http.TokenExpiredHandler
-import restaurant.common.presentation.exception.handler.nonhttp.IoExceptionHandler
-import restaurant.common.presentation.exception.handler.nonhttp.NoSuchElementHandler
 import restaurant.common.presentation.exception.handler.nonhttp.NonHttpExceptionInfo
-import restaurant.common.presentation.exception.handler.nonhttp.OutOfMemoryErrorHandler
+import restaurant.common.presentation.rx.RxRequester
 import restaurants.common.core.util.CrashlyticsUtil
 import retrofit2.HttpException
 
@@ -18,17 +13,6 @@ import retrofit2.HttpException
  */
 
 object ExceptionProcessor{
-
-    private val httpHandlers = listOf(
-            TokenExpiredHandler(),
-            ServerErrorHandler()
-    )
-
-    private val nonHttpHandlers = listOf(
-            IoExceptionHandler(),
-            NoSuchElementHandler(),
-            OutOfMemoryErrorHandler()
-    )
 
     internal fun process(throwable: Throwable, presenter: ExceptionPresenter) {
         try {
@@ -57,12 +41,13 @@ object ExceptionProcessor{
 
         val body = HttpExceptionUtil.error(httpException)
         val code = HttpExceptionUtil.code(httpException)
+
         if (code == null) {
             unknownException(presenter, throwable)
             return
         }
 
-        val optHandler = httpHandlers.firstOrNull { handler -> handler.canHandle(code) }
+        val optHandler = RxRequester.httpHandlers.firstOrNull { it.canHandle(code) }
 
         if (optHandler == null) {
             showOriginalHttpMessage(body, presenter, throwable)
@@ -80,7 +65,11 @@ object ExceptionProcessor{
 
     }
 
-    private fun showOriginalHttpMessage(body: String, presenter: ExceptionPresenter, throwable: Throwable) {
+    private fun showOriginalHttpMessage(
+            body: String,
+            presenter: ExceptionPresenter,
+            throwable: Throwable
+    ) {
         val contract = parseHttpExceptionModel(body)
 
         if (TextUtils.isEmpty(contract.message)) {
@@ -99,7 +88,7 @@ object ExceptionProcessor{
             throwable: Throwable,
             presenter: ExceptionPresenter
     ) {
-        val optHandler = nonHttpHandlers.firstOrNull { it.canHandle(throwable) }
+        val optHandler = RxRequester.nonHttpHandlers.firstOrNull { it.canHandle(throwable) }
 
         if (optHandler == null) {
             unknownException(presenter, throwable)
@@ -115,7 +104,7 @@ object ExceptionProcessor{
 
     private fun unknownException(presenter: ExceptionPresenter, throwable: Throwable) {
         // Default handling, show generic problem.
-        presenter.showErrorRes(R.string.oops_something_went_wrong)
+        presenter.onHandleFail()
 
         // Report Crashlytics to handle this exception in the future
         CrashlyticsUtil.log(throwable)

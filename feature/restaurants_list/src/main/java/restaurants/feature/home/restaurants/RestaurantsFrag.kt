@@ -3,9 +3,9 @@ package restaurants.feature.home.restaurants
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import org.koin.android.viewmodel.ext.android.viewModel
 import restaurant.common.presentation.ui.frag.BaseFrag
 import restaurants.common.core.util.ThreadUtil
-import org.koin.android.viewmodel.ext.android.viewModel
 import restaurants.common.core.util.linearLayoutManager
 import restaurants.feature.home.R
 import restaurants.feature.home.restaurants.di.injectFeature

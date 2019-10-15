@@ -1,9 +1,9 @@
 package com.restaurants.app
 
-import restaurants.feature.home.restaurants.RestaurantsVm
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.koin.java.KoinJavaComponent
+import restaurants.feature.home.restaurants.RestaurantsVm
 
 
 class SearchVmTest : BaseUnitTest() {

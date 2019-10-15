@@ -2,11 +2,11 @@ package restaurant.common.presentation.ui.dialog.info
 
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.frag_dialog_info.*
-import restaurant.common.presentation.ui.vm.DefaultViewModel
+import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.dialog.LoadingDialogHelper
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
+import restaurant.common.presentation.ui.vm.DefaultViewModel
 import restaurants.common.core.util.ThreadUtil
-import restaurant.common.presentation.R
 
 class InfoDialog : BaseDialogFrag<DefaultViewModel>() {
 

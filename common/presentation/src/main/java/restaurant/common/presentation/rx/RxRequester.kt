@@ -4,7 +4,12 @@ import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.processors.PublishProcessor
-import restaurant.common.presentation.exception.*
+import restaurant.common.presentation.exception.ExceptionPresenter
+import restaurant.common.presentation.exception.RxExceptionInterceptor
+import restaurant.common.presentation.exception.addSchedulers
+import restaurant.common.presentation.exception.disposeBy
+import restaurant.common.presentation.exception.handler.http.HttpExceptionHandler
+import restaurant.common.presentation.exception.handler.nonhttp.NonHttpExceptionHandler
 import restaurant.common.presentation.ui.view.BaseView
 import restaurants.common.data.rx.RequestInfo
 
@@ -14,9 +19,13 @@ class RxRequester(
         val showError: (String) -> Unit,
         val showErrorRes: (Int) -> Unit,
         val showLoading: () -> Unit,
-        val hideLoading: () -> Unit
+        val hideLoading: () -> Unit,
+        val onHandleFail: () -> Unit
 ) {
-
+    companion object {
+        var httpHandlers = listOf<HttpExceptionHandler>()
+        var nonHttpHandlers = listOf<NonHttpExceptionHandler>()
+    }
     lateinit var view: BaseView
     private val disposables: CompositeDisposable = CompositeDisposable()
 
@@ -79,7 +88,8 @@ class RxRequester(
                 showError = showError,
                 showErrorRes = showErrorRes,
                 showLoading = showLoading,
-                hideLoading = hideLoading
+                hideLoading = hideLoading,
+                onHandleFail = onHandleFail
         )
         return RxExceptionInterceptor(presenter)
     }

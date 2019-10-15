@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="restaurants.common.core" />
+<manifest package="restaurants.common.core" />

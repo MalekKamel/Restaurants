@@ -2,8 +2,8 @@ package restaurant.common.presentation.ui.dialog
 
 import kotlinx.android.synthetic.main.frag_dialog_retry.*
 import restaurant.common.presentation.R
-import restaurant.common.presentation.ui.vm.DefaultViewModel
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
+import restaurant.common.presentation.ui.vm.DefaultViewModel
 
 class RetryDialogFrag : BaseDialogFrag<DefaultViewModel>() {
 

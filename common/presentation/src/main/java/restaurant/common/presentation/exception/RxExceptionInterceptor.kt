@@ -2,7 +2,6 @@ package restaurant.common.presentation.exception
 
 
 import io.reactivex.functions.Consumer
-import retrofit2.HttpException
 
 /**
  * Created by Mickey on 4/1/17.

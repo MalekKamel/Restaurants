@@ -9,8 +9,8 @@ class ServerErrorHandler : HttpExceptionHandler() {
         return listOf(500)
     }
 
-    override fun handle() {
-        presenter.showErrorRes(R.string.oops_something_went_wrong)
+    override fun handle(info: HttpExceptionInfo) {
+        info.presenter.showErrorRes(R.string.oops_something_went_wrong)
     }
 
 }

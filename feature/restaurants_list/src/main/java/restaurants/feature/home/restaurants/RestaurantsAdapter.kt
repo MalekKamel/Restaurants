@@ -2,10 +2,10 @@ package restaurants.feature.home.restaurants
 
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_restaurant.view.*
-import restaurants.feature.home.R
-import restaurants.common.core.picasso.PicassoUtil
 import restaurant.common.presentation.ui.view.BaseView
+import restaurants.common.core.picasso.PicassoUtil
 import restaurants.common.data.model.Restaurant
+import restaurants.feature.home.R
 
 
 /**

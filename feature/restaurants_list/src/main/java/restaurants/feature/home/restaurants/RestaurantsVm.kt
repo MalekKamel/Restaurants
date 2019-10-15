@@ -2,9 +2,9 @@ package restaurants.feature.home.restaurants
 
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import restaurants.common.data.DataManager
-import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurant.common.presentation.exception.disposeBy
+import restaurant.common.presentation.ui.vm.BaseViewModel
+import restaurants.common.data.DataManager
 import restaurants.common.data.model.Restaurant
 import restaurants.common.data.model.toPresentation
 

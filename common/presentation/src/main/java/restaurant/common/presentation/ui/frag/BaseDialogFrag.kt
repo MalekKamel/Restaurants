@@ -12,12 +12,12 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.annotation.Nullable
 import androidx.fragment.app.FragmentActivity
-import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurant.common.presentation.ui.view.BaseView
-import restaurants.common.core.util.CrashlyticsUtil
-import restaurant.common.presentation.ui.vm.BaseViewModel
 import com.sha.kamel.navigator.FragmentNavigator
 import com.trello.rxlifecycle2.components.support.RxDialogFragment
+import restaurant.common.presentation.ui.activity.BaseActivity
+import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.vm.BaseViewModel
+import restaurants.common.core.util.CrashlyticsUtil
 
 /**
  * Created by Sha on 9/24/17.

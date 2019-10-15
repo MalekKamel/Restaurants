@@ -3,10 +3,10 @@ package restaurant.common.presentation.ui.activity
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import restaurants.common.data.pref.SharedPref
 import restaurant.common.presentation.ui.view.BaseView
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurant.common.presentation.ui.vm.BaseViewModel
+import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.data.pref.SharedPref
 
 abstract class BaseActivity<VM : BaseViewModel>
     : AppCompatActivity(), BaseView {

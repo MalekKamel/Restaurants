@@ -13,7 +13,8 @@ data class ExceptionPresenter(
         val showError: (String) -> Unit,
         val showErrorRes: (Int) -> Unit,
         val showLoading: () -> Unit,
-        val hideLoading: () -> Unit
+        val hideLoading: () -> Unit,
+        val onHandleFail: () -> Unit
 ) {
     fun retryRequest() {
         requestInfo.retryCallback()

@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.include_recycler_view_refreshable.*
+import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurant.common.presentation.ui.view.BaseView
-import restaurants.common.core.util.CrashlyticsUtil
-import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.vm.BaseViewModel
+import restaurants.common.core.util.CrashlyticsUtil
 
 abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
 

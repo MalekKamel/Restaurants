@@ -11,9 +11,9 @@ import restaurant.common.presentation.ui.dialog.info.InfoDialog
 import restaurant.common.presentation.ui.dialog.info.InfoDialogHelper
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
 import restaurant.common.presentation.ui.frag.BaseFrag
+import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.core.util.FlashbarUtil
 import restaurants.common.core.util.ThreadUtil
-import restaurant.common.presentation.ui.vm.BaseViewModel
 
 /**
  * Created by Sha on 9/14/17.
