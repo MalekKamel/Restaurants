@@ -310,6 +310,8 @@ int attr drawableLeftCompat 0x0
 int attr drawableRightCompat 0x0
 int attr drawableSize 0x0
 int attr drawableStartCompat 0x0
+int attr drawableTint 0x0
+int attr drawableTintMode 0x0
 int attr drawableTopCompat 0x0
 int attr drawerArrowStyle 0x0
 int attr dropDownListViewStyle 0x0
@@ -1793,6 +1795,9 @@ int dimen abc_edit_text_inset_bottom_material 0x0
 int dimen abc_edit_text_inset_horizontal_material 0x0
 int dimen abc_edit_text_inset_top_material 0x0
 int dimen abc_floating_window_z 0x0
+int dimen abc_list_item_height_large_material 0x0
+int dimen abc_list_item_height_material 0x0
+int dimen abc_list_item_height_small_material 0x0
 int dimen abc_list_item_padding_horizontal_material 0x0
 int dimen abc_panel_menu_list_width 0x0
 int dimen abc_progress_bar_height_material 0x0
@@ -3080,6 +3085,8 @@ int style ThemeOverlay_AppCompat 0x0
 int style ThemeOverlay_AppCompat_ActionBar 0x0
 int style ThemeOverlay_AppCompat_Dark 0x0
 int style ThemeOverlay_AppCompat_Dark_ActionBar 0x0
+int style ThemeOverlay_AppCompat_DayNight 0x0
+int style ThemeOverlay_AppCompat_DayNight_ActionBar 0x0
 int style ThemeOverlay_AppCompat_Dialog 0x0
 int style ThemeOverlay_AppCompat_Dialog_Alert 0x0
 int style ThemeOverlay_AppCompat_Light 0x0
@@ -3419,7 +3426,7 @@ int styleable AppCompatTextHelper_android_drawableRight 3
 int styleable AppCompatTextHelper_android_drawableStart 4
 int styleable AppCompatTextHelper_android_drawableTop 5
 int styleable AppCompatTextHelper_android_textAppearance 6
-int[] styleable AppCompatTextView { 0x1010034, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable AppCompatTextView { 0x1010034, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable AppCompatTextView_android_textAppearance 0
 int styleable AppCompatTextView_autoSizeMaxTextSize 1
 int styleable AppCompatTextView_autoSizeMinTextSize 2
@@ -3431,14 +3438,16 @@ int styleable AppCompatTextView_drawableEndCompat 7
 int styleable AppCompatTextView_drawableLeftCompat 8
 int styleable AppCompatTextView_drawableRightCompat 9
 int styleable AppCompatTextView_drawableStartCompat 10
-int styleable AppCompatTextView_drawableTopCompat 11
-int styleable AppCompatTextView_firstBaselineToTopHeight 12
-int styleable AppCompatTextView_fontFamily 13
-int styleable AppCompatTextView_fontVariationSettings 14
-int styleable AppCompatTextView_lastBaselineToBottomHeight 15
-int styleable AppCompatTextView_lineHeight 16
-int styleable AppCompatTextView_textAllCaps 17
-int styleable AppCompatTextView_textLocale 18
+int styleable AppCompatTextView_drawableTint 11
+int styleable AppCompatTextView_drawableTintMode 12
+int styleable AppCompatTextView_drawableTopCompat 13
+int styleable AppCompatTextView_firstBaselineToTopHeight 14
+int styleable AppCompatTextView_fontFamily 15
+int styleable AppCompatTextView_fontVariationSettings 16
+int styleable AppCompatTextView_lastBaselineToBottomHeight 17
+int styleable AppCompatTextView_lineHeight 18
+int styleable AppCompatTextView_textAllCaps 19
+int styleable AppCompatTextView_textLocale 20
 int[] styleable AppCompatTheme { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10100ae, 0x1010057, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable AppCompatTheme_actionBarDivider 0
 int styleable AppCompatTheme_actionBarItemBackground 1
@@ -4389,7 +4398,7 @@ int styleable TabLayout_tabSelectedTextColor 21
 int styleable TabLayout_tabTextAppearance 22
 int styleable TabLayout_tabTextColor 23
 int styleable TabLayout_tabUnboundedRipple 24
-int[] styleable TextAppearance { 0x10103ac, 0x1010161, 0x1010162, 0x1010163, 0x1010164, 0x1010098, 0x101009a, 0x101009b, 0x1010095, 0x1010097, 0x1010096, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable TextAppearance { 0x10103ac, 0x1010161, 0x1010162, 0x1010163, 0x1010164, 0x1010098, 0x101009a, 0x101009b, 0x1010585, 0x1010095, 0x1010097, 0x1010096, 0x0, 0x0, 0x0, 0x0 }
 int styleable TextAppearance_android_fontFamily 0
 int styleable TextAppearance_android_shadowColor 1
 int styleable TextAppearance_android_shadowDx 2
@@ -4398,13 +4407,14 @@ int styleable TextAppearance_android_shadowRadius 4
 int styleable TextAppearance_android_textColor 5
 int styleable TextAppearance_android_textColorHint 6
 int styleable TextAppearance_android_textColorLink 7
-int styleable TextAppearance_android_textSize 8
-int styleable TextAppearance_android_textStyle 9
-int styleable TextAppearance_android_typeface 10
-int styleable TextAppearance_fontFamily 11
-int styleable TextAppearance_fontVariationSettings 12
-int styleable TextAppearance_textAllCaps 13
-int styleable TextAppearance_textLocale 14
+int styleable TextAppearance_android_textFontWeight 8
+int styleable TextAppearance_android_textSize 9
+int styleable TextAppearance_android_textStyle 10
+int styleable TextAppearance_android_typeface 11
+int styleable TextAppearance_fontFamily 12
+int styleable TextAppearance_fontVariationSettings 13
+int styleable TextAppearance_textAllCaps 14
+int styleable TextAppearance_textLocale 15
 int[] styleable TextInputLayout { 0x1010150, 0x101009a, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable TextInputLayout_android_hint 0
 int styleable TextInputLayout_android_textColorHint 1
@@ -4454,7 +4464,7 @@ int[] styleable ThemeEnforcement { 0x1010034, 0x0, 0x0 }
 int styleable ThemeEnforcement_android_textAppearance 0
 int styleable ThemeEnforcement_enforceMaterialTheme 1
 int styleable ThemeEnforcement_enforceTextAppearance 2
-int[] styleable Toolbar { 0x10100af, 0x1010140, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int[] styleable Toolbar { 0x10100af, 0x1010140, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable Toolbar_android_gravity 0
 int styleable Toolbar_android_minHeight 1
 int styleable Toolbar_buttonGravity 2
@@ -4469,21 +4479,22 @@ int styleable Toolbar_contentInsetStartWithNavigation 10
 int styleable Toolbar_logo 11
 int styleable Toolbar_logoDescription 12
 int styleable Toolbar_maxButtonHeight 13
-int styleable Toolbar_navigationContentDescription 14
-int styleable Toolbar_navigationIcon 15
-int styleable Toolbar_popupTheme 16
-int styleable Toolbar_subtitle 17
-int styleable Toolbar_subtitleTextAppearance 18
-int styleable Toolbar_subtitleTextColor 19
-int styleable Toolbar_title 20
-int styleable Toolbar_titleMargin 21
-int styleable Toolbar_titleMarginBottom 22
-int styleable Toolbar_titleMarginEnd 23
-int styleable Toolbar_titleMarginStart 24
-int styleable Toolbar_titleMarginTop 25
-int styleable Toolbar_titleMargins 26
-int styleable Toolbar_titleTextAppearance 27
-int styleable Toolbar_titleTextColor 28
+int styleable Toolbar_menu 14
+int styleable Toolbar_navigationContentDescription 15
+int styleable Toolbar_navigationIcon 16
+int styleable Toolbar_popupTheme 17
+int styleable Toolbar_subtitle 18
+int styleable Toolbar_subtitleTextAppearance 19
+int styleable Toolbar_subtitleTextColor 20
+int styleable Toolbar_title 21
+int styleable Toolbar_titleMargin 22
+int styleable Toolbar_titleMarginBottom 23
+int styleable Toolbar_titleMarginEnd 24
+int styleable Toolbar_titleMarginStart 25
+int styleable Toolbar_titleMarginTop 26
+int styleable Toolbar_titleMargins 27
+int styleable Toolbar_titleTextAppearance 28
+int styleable Toolbar_titleTextColor 29
 int[] styleable Transition { 0x10100d0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable Transition_android_id 0
 int styleable Transition_constraintSetEnd 1

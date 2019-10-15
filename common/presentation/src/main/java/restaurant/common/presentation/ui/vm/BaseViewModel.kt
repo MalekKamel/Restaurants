@@ -1,13 +1,15 @@
 package restaurant.common.presentation.ui.vm
 
 import androidx.lifecycle.ViewModel
+import com.sha.rxrequester.Presentable
+import com.sha.rxrequester.RxRequester
 import io.reactivex.disposables.CompositeDisposable
-import restaurant.common.presentation.exception.handler.http.ServerErrorHandler
-import restaurant.common.presentation.exception.handler.http.TokenExpiredHandler
-import restaurant.common.presentation.exception.handler.nonhttp.IoExceptionHandler
-import restaurant.common.presentation.exception.handler.nonhttp.NoSuchElementHandler
-import restaurant.common.presentation.exception.handler.nonhttp.OutOfMemoryErrorHandler
-import restaurant.common.presentation.rx.RxRequester
+import restaurant.common.presentation.rx.ServerErrorHandler
+import restaurant.common.presentation.rx.TokenExpiredHandler
+import restaurant.common.presentation.rx.IoExceptionHandler
+import restaurant.common.presentation.rx.NoSuchElementHandler
+import restaurant.common.presentation.rx.OutOfMemoryErrorHandler
+import restaurant.common.presentation.rx.ErrorContract
 import restaurant.common.presentation.ui.view.BaseView
 import restaurants.common.core.R
 import restaurants.common.data.DataManager
@@ -25,14 +27,32 @@ open class BaseViewModel(val dm: DataManager)
         requester = setupRequester()
     }
 
-    private fun setupRequester(): RxRequester{
-       val requester = RxRequester(
-                showError =    { view.showErrorInFlashBar(it) },
-                showErrorRes = { view.showErrorInFlashBar(it) },
-                showLoading =  { view.showLoading() },
-                hideLoading =  { view.hideLoading() },
-                onHandleFail = { view.showErrorInFlashBar(R.string.oops_something_went_wrong) }
-        )
+    private fun setupRequester(): RxRequester {
+        val presentable = object: Presentable {
+            override fun showError(error: String) {
+                view.showErrorInFlashBar(error)
+            }
+
+            override fun showError(error: Int) {
+                view.showErrorInFlashBar(error)
+            }
+
+            override fun showLoading() {
+                view.showLoading()
+            }
+
+            override fun hideLoading() {
+                view.hideLoading()
+            }
+
+            override fun onHandleErrorFailed() {
+                view.showErrorInFlashBar(R.string.oops_something_went_wrong)
+            }
+
+        }
+
+       val requester = RxRequester.create(ErrorContract::class.java, presentable)
+
         if (RxRequester.nonHttpHandlers.isEmpty())
             RxRequester.nonHttpHandlers = listOf(
                     IoExceptionHandler(),

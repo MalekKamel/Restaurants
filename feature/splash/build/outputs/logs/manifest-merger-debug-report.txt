@@ -1,26 +1,26 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
+ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
 	package
-		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:2:5-41
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:11-47
 		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
 		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
-		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
-		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
-	android:versionCode
-		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
-		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-2:44
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
 		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+	android:versionCode
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:1:1-50
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
 uses-sdk
 INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
