@@ -1,5 +1,7 @@
 # Restaurants
 
+<img src="https://github.com/ShabanKamell/RxRequester/blob/master/blob/raw/logo.png" height="250">
+
 A sample for using:
  - [ ] Kotlin
  - [ ] Modular Architecture
