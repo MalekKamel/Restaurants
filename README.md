@@ -5,8 +5,12 @@
 
 Restaurants represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
  
- ### License
+ ### Credit
+- [ ] [Build a Modular Android App Architecture (Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww)
+- [ ] [Plaid](https://github.com/android/plaid)
+- [ ] [Savepopulation's Movies](https://github.com/savepopulation/movies)
 
+ ### License
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
