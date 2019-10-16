@@ -14,6 +14,6 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null)
             FragmentNavigator(this)
-                    .add(fragmentFrom(Fragments.Splash), false)
+                    .replace(fragmentFrom(Fragments.Splash), false)
     }
 }
