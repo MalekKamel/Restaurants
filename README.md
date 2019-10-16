@@ -2,15 +2,8 @@
 
 <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/raw/home.png" height="500">
 
-A sample for using:
- - [ ] Kotlin
- - [ ] Modular Architecture
- - [ ] MVVM
- - [ ] RxJava
- - [ ] Koin
- - [ ] KoinTest
- - [ ] Retrofit
- 
+
+Restaurants represents a real world app example: it provides a fairly complex set of functionalities, its a suitable showcase for all the advantages that architecture components bring. Restaurants has all features that would make it a modular, scalable, testable and maintainable app.
  
  ### License
 
