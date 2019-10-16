@@ -15,10 +15,6 @@
         <item name="color">@android:color/white</item>
     </style>
 
-    <style name="DialogStyle" parent="">
-        <item name="android:minWidth">@dimen/minWidth_dialog</item>
-        <item name="android:minHeight">@dimen/minHeight_dialog</item>
-        <item name="android:background">@drawable/rounded_corners</item>
-    </style>
+
 
 </resources>

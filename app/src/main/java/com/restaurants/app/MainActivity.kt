@@ -1,25 +1,19 @@
 package com.restaurants.app
 
 import android.os.Bundle
-import android.widget.FrameLayout
 import com.sha.kamel.navigator.FragmentNavigator
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurants.feature.home.restaurants.RestaurantsFrag
+import restaurants.feature.restaurants.RestaurantsFrag
 
-class MainActivity : BaseActivity<MainVm>() {
+class MainActivity : BaseActivity() {
 
     override var layoutId: Int = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            try {
-                val frame = findViewById<FrameLayout>(R.id.mainFrame)
-                FragmentNavigator(this, R.id.mainFrame)
-                        .add(RestaurantsFrag.newInstance(), false)
-            }catch (e: Exception){
-                e.printStackTrace()
-            }
+            FragmentNavigator(this, R.id.mainFrame)
+                    .add(RestaurantsFrag.newInstance(), false)
         }
     }
 }

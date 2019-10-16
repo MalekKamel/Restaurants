@@ -77,8 +77,8 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
         }
     }
 
-    override fun activity(): BaseActivity<*>? {
-        return activity as? BaseActivity<*>
+    override fun activity(): BaseActivity? {
+        return activity as? BaseActivity
     }
 
     override fun fragment(): BaseFrag<*> {

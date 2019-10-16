@@ -5,7 +5,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.util.Log
 import androidx.core.content.res.ResourcesCompat
-import restaurants.common.core.R
+import restaurant.common.presentation.R
 import java.util.*
 
 

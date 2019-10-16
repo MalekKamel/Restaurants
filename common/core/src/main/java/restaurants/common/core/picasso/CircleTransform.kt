@@ -1,6 +1,5 @@
 package restaurants.common.core.picasso
 
-
 import android.graphics.*
 import com.squareup.picasso.Transformation
 import restaurants.common.core.io.BitmapUtil

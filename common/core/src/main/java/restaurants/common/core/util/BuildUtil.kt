@@ -14,7 +14,7 @@ class BuildUtil {
     }
 
     companion object {
-        fun isDebug() = BuildConfig.BUILD_TYPE == Type.DEBUG.name
+        fun isDebug() = BuildConfig.DEBUG
     }
 
 }

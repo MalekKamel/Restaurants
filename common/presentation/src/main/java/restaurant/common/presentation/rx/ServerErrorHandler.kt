@@ -2,7 +2,7 @@ package restaurant.common.presentation.rx
 
 import com.sha.rxrequester.exception.handler.http.HttpExceptionHandler
 import com.sha.rxrequester.exception.handler.http.HttpExceptionInfo
-import restaurants.common.core.R
+import restaurant.common.presentation.R
 
 
 class ServerErrorHandler : HttpExceptionHandler() {

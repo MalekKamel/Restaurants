@@ -30,7 +30,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
 
     protected var isDismissed: Boolean = false
 
-    private lateinit var activity: BaseActivity<*>
+    private lateinit var activity: BaseActivity
 
     protected open var isCanceledOnTouchOutside: Boolean = false
         get() = false
@@ -44,7 +44,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         try {
-            activity = getActivity() as BaseActivity<*>
+            activity = getActivity() as BaseActivity
 
         } catch (e: Exception) {
             CrashlyticsUtil.logAndPrint(e)
@@ -91,7 +91,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
         return dialog
     }
 
-    override fun activity(): BaseActivity<*> {
+    override fun activity(): BaseActivity {
         return activity
     }
 

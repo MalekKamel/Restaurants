@@ -1,5 +1,19 @@
 apply from: "$rootDir/${GradleName.commonAndroidLib}"
 
+android {
+    buildTypes {
+
+        release {
+            buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlProd}\"")
+        }
+
+        debug {
+            buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlDev}\"")
+        }
+
+    }
+}
+
 dependencies {
     api project(Module.core)
 

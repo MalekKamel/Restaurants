@@ -1,4 +1,4 @@
-restaurants.feature.home
+restaurants.feature.restaurants
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1841,7 +1841,6 @@ dimen cardview_default_elevation
 dimen cardview_default_radius
 dimen common_corners
 dimen common_margin
-dimen common_padding
 dimen common_space
 dimen common_text_size
 dimen compat_button_inset_horizontal_material
@@ -1898,8 +1897,6 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
-dimen divider_gap_vert
-dimen divider_size_vert
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1928,10 +1925,7 @@ dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
 dimen margin_login_btn_start_end
-dimen margin_top_et
-dimen minHeight_dialog
 dimen minHeight_info_dialog
-dimen minWidth_dialog
 dimen mtrl_alert_dialog_background_inset_bottom
 dimen mtrl_alert_dialog_background_inset_end
 dimen mtrl_alert_dialog_background_inset_start
@@ -2136,7 +2130,6 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_cloud
-drawable bg_person_placeholder
 drawable bg_round_orange
 drawable btn_black_normal
 drawable btn_checkbox_checked_mtrl
@@ -2154,15 +2147,11 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable fb_button_background_selector
-drawable ic_back
-drawable ic_email
 drawable ic_info
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable ic_password
-drawable ic_person
 drawable mtrl_clear_text_button
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
@@ -2181,7 +2170,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable rect_border
 drawable rounded_corners
 drawable rounded_corners_cloudy
 drawable shadow_bottom
@@ -2251,7 +2239,6 @@ id alertTitle
 id alpha
 id alphaNumeric
 id anticipate
-id appbar
 id asConfigured
 id async
 id auto
@@ -2272,7 +2259,6 @@ id chip
 id chip_group
 id chronometer
 id clear_text
-id collapsing_toolbar
 id confirm_button
 id constraint
 id container
@@ -2367,7 +2353,6 @@ id line3
 id linear
 id listMode
 id list_item
-id main_content
 id masked
 id media_actions
 id message
@@ -2502,9 +2487,6 @@ id transition_transform
 id triangle
 id tvCity
 id tvName
-id tvRate
-id tvReleaseDate
-id tvTitle
 id tv_message
 id tv_toolbarTitle
 id unchecked
@@ -2598,10 +2580,8 @@ layout frag_dialog_info
 layout frag_dialog_loading
 layout frag_dialog_recycler_view
 layout frag_dialog_retry
-layout frag_movie_detail
-layout frag_search
+layout frag_restaurants
 layout frame_main
-layout include__movie_detail
 layout include_recycler_view_refreshable
 layout item_restaurant
 layout mtrl_alert_dialog
@@ -2643,7 +2623,6 @@ layout test_action_chip
 layout test_reflow_chipgroup
 layout toolbar
 layout tooltip
-mipmap ic_launcher
 string abc_action_bar_home_description
 string abc_action_bar_home_description_format
 string abc_action_bar_home_subtitle_description_format
@@ -2711,7 +2690,6 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
-string movies
 string mtrl_chip_close_icon_content_description
 string mtrl_picker_cancel
 string mtrl_picker_confirm
@@ -2730,9 +2708,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string required
 string retry
-string search
 string search_menu_title
-string search_movie
 string socket_timeout_exception
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
@@ -2742,7 +2718,6 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
-style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -2957,13 +2932,9 @@ style Base_Widget_MaterialComponents_PopupMenu
 style Base_Widget_MaterialComponents_PopupMenu_Overflow
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
-style Button
-style Button_Orange
 style CardView
 style CardView_Dark
 style CardView_Light
-style DialogStyle
-style DrawerArrowStyle
 style FbButtonStyle
 style FbButtonTextStyle
 style FbCircularIndeterminateProgressStyle

@@ -1840,7 +1840,6 @@ int dimen cardview_default_elevation 0x0
 int dimen cardview_default_radius 0x0
 int dimen common_corners 0x0
 int dimen common_margin 0x0
-int dimen common_padding 0x0
 int dimen common_space 0x0
 int dimen common_text_size 0x0
 int dimen compat_button_inset_horizontal_material 0x0
@@ -1897,8 +1896,6 @@ int dimen design_tab_text_size_2line 0x0
 int dimen design_textinput_caption_translate_y 0x0
 int dimen disabled_alpha_material_dark 0x0
 int dimen disabled_alpha_material_light 0x0
-int dimen divider_gap_vert 0x0
-int dimen divider_size_vert 0x0
 int dimen fastscroll_default_thickness 0x0
 int dimen fastscroll_margin 0x0
 int dimen fastscroll_minimum_range 0x0
@@ -1927,10 +1924,7 @@ int dimen item_touch_helper_max_drag_scroll_per_frame 0x0
 int dimen item_touch_helper_swipe_escape_max_velocity 0x0
 int dimen item_touch_helper_swipe_escape_velocity 0x0
 int dimen margin_login_btn_start_end 0x0
-int dimen margin_top_et 0x0
-int dimen minHeight_dialog 0x0
 int dimen minHeight_info_dialog 0x0
-int dimen minWidth_dialog 0x0
 int dimen mtrl_alert_dialog_background_inset_bottom 0x0
 int dimen mtrl_alert_dialog_background_inset_end 0x0
 int dimen mtrl_alert_dialog_background_inset_start 0x0
@@ -2135,7 +2129,6 @@ int drawable abc_vector_test 0x0
 int drawable avd_hide_password 0x0
 int drawable avd_show_password 0x0
 int drawable bg_cloud 0x0
-int drawable bg_person_placeholder 0x0
 int drawable bg_round_orange 0x0
 int drawable btn_black_normal 0x0
 int drawable btn_checkbox_checked_mtrl 0x0
@@ -2153,15 +2146,11 @@ int drawable design_ic_visibility_off 0x0
 int drawable design_password_eye 0x0
 int drawable design_snackbar_background 0x0
 int drawable fb_button_background_selector 0x0
-int drawable ic_back 0x0
-int drawable ic_email 0x0
 int drawable ic_info 0x0
 int drawable ic_mtrl_checked_circle 0x0
 int drawable ic_mtrl_chip_checked_black 0x0
 int drawable ic_mtrl_chip_checked_circle 0x0
 int drawable ic_mtrl_chip_close_circle 0x0
-int drawable ic_password 0x0
-int drawable ic_person 0x0
 int drawable mtrl_clear_text_button 0x0
 int drawable mtrl_popupmenu_background 0x0
 int drawable mtrl_popupmenu_background_dark 0x0
@@ -2180,7 +2169,6 @@ int drawable notification_template_icon_bg 0x0
 int drawable notification_template_icon_low_bg 0x0
 int drawable notification_tile_bg 0x0
 int drawable notify_panel_notification_icon_bg 0x0
-int drawable rect_border 0x0
 int drawable rounded_corners 0x0
 int drawable rounded_corners_cloudy 0x0
 int drawable shadow_bottom 0x0
@@ -2250,7 +2238,6 @@ int id alertTitle 0x0
 int id alpha 0x0
 int id alphaNumeric 0x0
 int id anticipate 0x0
-int id appbar 0x0
 int id asConfigured 0x0
 int id async 0x0
 int id auto 0x0
@@ -2271,7 +2258,6 @@ int id chip 0x0
 int id chip_group 0x0
 int id chronometer 0x0
 int id clear_text 0x0
-int id collapsing_toolbar 0x0
 int id confirm_button 0x0
 int id constraint 0x0
 int id container 0x0
@@ -2366,7 +2352,6 @@ int id line3 0x0
 int id linear 0x0
 int id listMode 0x0
 int id list_item 0x0
-int id main_content 0x0
 int id masked 0x0
 int id media_actions 0x0
 int id message 0x0
@@ -2501,9 +2486,6 @@ int id transition_transform 0x0
 int id triangle 0x0
 int id tvCity 0x0
 int id tvName 0x0
-int id tvRate 0x0
-int id tvReleaseDate 0x0
-int id tvTitle 0x0
 int id tv_message 0x0
 int id tv_toolbarTitle 0x0
 int id unchecked 0x0
@@ -2597,10 +2579,8 @@ int layout frag_dialog_info 0x0
 int layout frag_dialog_loading 0x0
 int layout frag_dialog_recycler_view 0x0
 int layout frag_dialog_retry 0x0
-int layout frag_movie_detail 0x0
-int layout frag_search 0x0
+int layout frag_restaurants 0x0
 int layout frame_main 0x0
-int layout include__movie_detail 0x0
 int layout include_recycler_view_refreshable 0x0
 int layout item_restaurant 0x0
 int layout mtrl_alert_dialog 0x0
@@ -2642,7 +2622,6 @@ int layout test_action_chip 0x0
 int layout test_reflow_chipgroup 0x0
 int layout toolbar 0x0
 int layout tooltip 0x0
-int mipmap ic_launcher 0x0
 int string abc_action_bar_home_description 0x0
 int string abc_action_bar_home_description_format 0x0
 int string abc_action_bar_home_subtitle_description_format 0x0
@@ -2710,7 +2689,6 @@ int string fab_transformation_scrim_behavior 0x0
 int string fab_transformation_sheet_behavior 0x0
 int string hide_bottom_view_on_scroll_behavior 0x0
 int string icon_content_description 0x0
-int string movies 0x0
 int string mtrl_chip_close_icon_content_description 0x0
 int string mtrl_picker_cancel 0x0
 int string mtrl_picker_confirm 0x0
@@ -2729,9 +2707,7 @@ int string path_password_eye_mask_visible 0x0
 int string path_password_strike_through 0x0
 int string required 0x0
 int string retry 0x0
-int string search 0x0
 int string search_menu_title 0x0
-int string search_movie 0x0
 int string socket_timeout_exception 0x0
 int string status_bar_notification_info_overflow 0x0
 int style AlertDialog_AppCompat 0x0
@@ -2741,7 +2717,6 @@ int style Animation_AppCompat_DropDownUp 0x0
 int style Animation_AppCompat_Tooltip 0x0
 int style Animation_Design_BottomSheetDialog 0x0
 int style Animation_MaterialComponents_BottomSheetDialog 0x0
-int style AppTheme 0x0
 int style Base_AlertDialog_AppCompat 0x0
 int style Base_AlertDialog_AppCompat_Light 0x0
 int style Base_Animation_AppCompat_Dialog 0x0
@@ -2956,13 +2931,9 @@ int style Base_Widget_MaterialComponents_PopupMenu 0x0
 int style Base_Widget_MaterialComponents_PopupMenu_Overflow 0x0
 int style Base_Widget_MaterialComponents_TextInputEditText 0x0
 int style Base_Widget_MaterialComponents_TextInputLayout 0x0
-int style Button 0x0
-int style Button_Orange 0x0
 int style CardView 0x0
 int style CardView_Dark 0x0
 int style CardView_Light 0x0
-int style DialogStyle 0x0
-int style DrawerArrowStyle 0x0
 int style FbButtonStyle 0x0
 int style FbButtonTextStyle 0x0
 int style FbCircularIndeterminateProgressStyle 0x0

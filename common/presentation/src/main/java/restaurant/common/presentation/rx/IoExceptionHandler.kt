@@ -3,7 +3,7 @@ package restaurant.common.presentation.rx
 import com.sha.rxrequester.exception.handler.nonhttp.NonHttpExceptionHandler
 import com.sha.rxrequester.exception.handler.nonhttp.NonHttpExceptionInfo
 import okhttp3.internal.http2.ConnectionShutdownException
-import restaurants.common.core.R
+import restaurant.common.presentation.R
 import java.io.IOException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException

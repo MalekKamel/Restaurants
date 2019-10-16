@@ -2,7 +2,7 @@ package restaurant.common.presentation.rx
 
 import com.sha.rxrequester.exception.handler.nonhttp.NonHttpExceptionHandler
 import com.sha.rxrequester.exception.handler.nonhttp.NonHttpExceptionInfo
-import restaurants.common.core.R
+import restaurant.common.presentation.R
 
 class OutOfMemoryErrorHandler : NonHttpExceptionHandler<OutOfMemoryError>() {
 

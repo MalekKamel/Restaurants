@@ -11,7 +11,7 @@ import restaurant.common.presentation.rx.NoSuchElementHandler
 import restaurant.common.presentation.rx.OutOfMemoryErrorHandler
 import restaurant.common.presentation.rx.ErrorContract
 import restaurant.common.presentation.ui.view.BaseView
-import restaurants.common.core.R
+import restaurant.common.presentation.R
 import restaurants.common.data.DataManager
 import restaurants.common.data.pref.SharedPref
 

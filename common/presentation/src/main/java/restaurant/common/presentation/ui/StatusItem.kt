@@ -1,6 +1,6 @@
 package restaurant.common.presentation.ui
 
-import restaurants.common.core.R
+import restaurant.common.presentation.R
 
 
 class StatusItem(var statusId: Int, var statusMessage: String) {

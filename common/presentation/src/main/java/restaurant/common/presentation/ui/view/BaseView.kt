@@ -23,7 +23,7 @@ interface BaseView {
 
     fun baseViewModel(): BaseViewModel?
 
-    fun activity(): BaseActivity<*>?
+    fun activity(): BaseActivity?
 
     fun context(): Context? {
         return activity()

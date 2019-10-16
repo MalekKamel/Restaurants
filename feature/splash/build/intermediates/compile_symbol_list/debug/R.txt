@@ -814,6 +814,8 @@ int color background_floating_material_light 0x0
 int color background_material_dark 0x0
 int color background_material_light 0x0
 int color black_effective 0x0
+int color black_light 0x0
+int color black_transparent 0x0
 int color bright_foreground_disabled_material_dark 0x0
 int color bright_foreground_disabled_material_light 0x0
 int color bright_foreground_inverse_material_dark 0x0
@@ -827,6 +829,9 @@ int color cardview_light_background 0x0
 int color cardview_shadow_end_color 0x0
 int color cardview_shadow_start_color 0x0
 int color cloudy 0x0
+int color colorAccent 0x0
+int color colorPrimary 0x0
+int color colorPrimaryDark 0x0
 int color common_blue 0x0
 int color design_bottom_navigation_shadow_color 0x0
 int color design_box_stroke_color 0x0
@@ -877,10 +882,13 @@ int color error_color_material_light 0x0
 int color exception 0x0
 int color foreground_material_dark 0x0
 int color foreground_material_light 0x0
+int color gray 0x0
+int color gray_border 0x0
 int color green 0x0
 int color highlighted_text_material_dark 0x0
 int color highlighted_text_material_light 0x0
 int color hint 0x0
+int color icon_color 0x0
 int color link 0x0
 int color material_blue_grey_800 0x0
 int color material_blue_grey_900 0x0
@@ -955,6 +963,7 @@ int color notification_action_color_filter 0x0
 int color notification_icon_bg_color 0x0
 int color notification_material_background_media_default_color 0x0
 int color orange_light 0x0
+int color placeholder 0x0
 int color primary_dark_material_dark 0x0
 int color primary_dark_material_light 0x0
 int color primary_material_dark 0x0
@@ -969,6 +978,7 @@ int color secondary_text_default_material_dark 0x0
 int color secondary_text_default_material_light 0x0
 int color secondary_text_disabled_material_dark 0x0
 int color secondary_text_disabled_material_light 0x0
+int color semi_black 0x0
 int color semi_red 0x0
 int color shadow_color 0x0
 int color slate_black 0x0
@@ -1830,7 +1840,6 @@ int dimen cardview_default_elevation 0x0
 int dimen cardview_default_radius 0x0
 int dimen common_corners 0x0
 int dimen common_margin 0x0
-int dimen common_padding 0x0
 int dimen common_space 0x0
 int dimen common_text_size 0x0
 int dimen compat_button_inset_horizontal_material 0x0
@@ -1887,8 +1896,6 @@ int dimen design_tab_text_size_2line 0x0
 int dimen design_textinput_caption_translate_y 0x0
 int dimen disabled_alpha_material_dark 0x0
 int dimen disabled_alpha_material_light 0x0
-int dimen divider_gap_vert 0x0
-int dimen divider_size_vert 0x0
 int dimen fastscroll_default_thickness 0x0
 int dimen fastscroll_margin 0x0
 int dimen fastscroll_minimum_range 0x0
@@ -1917,10 +1924,7 @@ int dimen item_touch_helper_max_drag_scroll_per_frame 0x0
 int dimen item_touch_helper_swipe_escape_max_velocity 0x0
 int dimen item_touch_helper_swipe_escape_velocity 0x0
 int dimen margin_login_btn_start_end 0x0
-int dimen margin_top_et 0x0
-int dimen minHeight_dialog 0x0
 int dimen minHeight_info_dialog 0x0
-int dimen minWidth_dialog 0x0
 int dimen mtrl_alert_dialog_background_inset_bottom 0x0
 int dimen mtrl_alert_dialog_background_inset_end 0x0
 int dimen mtrl_alert_dialog_background_inset_start 0x0
@@ -2124,6 +2128,9 @@ int drawable abc_textfield_search_material 0x0
 int drawable abc_vector_test 0x0
 int drawable avd_hide_password 0x0
 int drawable avd_show_password 0x0
+int drawable bg_cloud 0x0
+int drawable bg_round_orange 0x0
+int drawable btn_black_normal 0x0
 int drawable btn_checkbox_checked_mtrl 0x0
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x0
 int drawable btn_checkbox_unchecked_mtrl 0x0
@@ -2163,6 +2170,7 @@ int drawable notification_template_icon_low_bg 0x0
 int drawable notification_tile_bg 0x0
 int drawable notify_panel_notification_icon_bg 0x0
 int drawable rounded_corners 0x0
+int drawable rounded_corners_cloudy 0x0
 int drawable shadow_bottom 0x0
 int drawable shadow_top 0x0
 int drawable tooltip_frame_dark 0x0

@@ -8,12 +8,8 @@ import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.data.pref.SharedPref
 
-abstract class BaseActivity<VM : BaseViewModel>
+abstract class BaseActivity
     : AppCompatActivity(), BaseView {
-
-    var vm: VM? = null
-
-    lateinit var pref: SharedPref
 
     abstract var layoutId: Int
 
@@ -24,8 +20,6 @@ abstract class BaseActivity<VM : BaseViewModel>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         try {
-            vm?.view = this
-
             if (layoutId != 0)
                 setContentView(layoutId)
 
@@ -53,12 +47,12 @@ abstract class BaseActivity<VM : BaseViewModel>
         return this
     }
 
-    override fun activity(): BaseActivity<*> {
+    override fun activity(): BaseActivity {
         return this
     }
 
     override fun baseViewModel(): BaseViewModel? {
-        return vm
+        return null
     }
 
 }
