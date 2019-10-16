@@ -1,6 +1,6 @@
 # Restaurants
 
-<img src="https://github.com/ShabanKamell/RxRequester/blob/master/blob/raw/logo.png" height="250">
+<img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/raw/home.png" height="250">
 
 A sample for using:
  - [ ] Kotlin
