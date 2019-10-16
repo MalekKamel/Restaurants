@@ -1,0 +1,49 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+	package
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:11-52
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+	xmlns:dist
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:3:5-61
+	xmlns:android
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+	android:versionCode
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:2:1-11:12
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+dist:module
+ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:5:5-9:19
+	dist:instant
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:6:9-29
+	dist:onDemand
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:7:9-30
+dist:fusing
+ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:8:9-44
+	dist:include
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml:8:22-41
+uses-sdk
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/src/main/AndroidManifest.xml

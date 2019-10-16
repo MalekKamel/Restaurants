@@ -1,13 +1,26 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="restaurants.feature.splash"
-4    android:versionCode="1"
-5    android:versionName="1.0.0" >
-6
-7    <uses-sdk
-8        android:minSdkVersion="21"
-8-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
-9        android:targetSdkVersion="28" />
-9-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
-10
-11</manifest>
+3    xmlns:dist="http://schemas.android.com/apk/distribution"
+4    featureSplit="splash"
+5    package="com.restaurant.app"
+6    android:versionCode="1"
+7    android:versionName="1.0.0" >
+8
+9    <uses-sdk
+10        android:minSdkVersion="21"
+10-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
+11        android:targetSdkVersion="28" />
+11-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml
+12
+13    <dist:module
+13-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:4:5-8:19
+14        dist:instant="false"
+14-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:5:9-29
+15        dist:onDemand="false" >
+15-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:6:9-30
+16        <dist:fusing dist:include="true" />
+16-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:7:9-44
+16-->/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/src/main/AndroidManifest.xml:7:22-41
+17    </dist:module>
+18
+19</manifest>

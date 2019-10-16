@@ -1,1 +1,10 @@
-<manifest package="restaurants.feature.splash" />
+<manifest package="restaurants.feature.splash"
+    xmlns:dist="http://schemas.android.com/apk/distribution">
+
+    <dist:module
+        dist:instant="false"
+        dist:onDemand="false">
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+</manifest>

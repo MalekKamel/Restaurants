@@ -1,0 +1,1 @@
+/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/splash/build/intermediates/res/merged/debug/layout_frag_splash.xml.flat 

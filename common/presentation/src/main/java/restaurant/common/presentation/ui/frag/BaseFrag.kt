@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.include_recycler_view_refreshable.*
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurant.common.presentation.ui.view.BaseView
@@ -18,11 +18,11 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
     abstract val vm: VM
 
     abstract var layoutId: Int
+    open var swipeRefreshLayoutId: Int = 0
     protected open fun doOnViewCreated() {}
     protected fun doOnResume() {}
 
     open var hasBackNavigation = false
-    open var hasSwipeRefresh = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,14 +51,11 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
     }
 
     private fun setupSwipeRefresh() {
-        if (hasSwipeRefresh) {
-            if (swipeRefresh == null)
-                throw IllegalStateException("The fragment implements `HasSwipeRefresh` but no SwipeRefreshLayout found")
-            swipeRefresh.setOnRefreshListener { this.onSwipeRefresh() }
+        if (swipeRefreshLayoutId != 0) {
+            findViewById<SwipeRefreshLayout>(swipeRefreshLayoutId).setOnRefreshListener { this.onSwipeRefresh() }
         }
         else {
-            if (swipeRefresh == null) return
-            swipeRefresh.isEnabled = false
+            findViewById<SwipeRefreshLayout>(swipeRefreshLayoutId).isEnabled = false
         }
     }
 

@@ -2,8 +2,9 @@ package com.restaurants.app
 
 import android.os.Bundle
 import com.sha.kamel.navigator.FragmentNavigator
+import restaurant.common.presentation.navigation.Fragments
+import restaurant.common.presentation.navigation.fragmentFrom
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurants.feature.restaurants.RestaurantsFrag
 
 class MainActivity : BaseActivity() {
 
@@ -11,9 +12,8 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState == null) {
-            FragmentNavigator(this, R.id.mainFrame)
-                    .add(RestaurantsFrag.newInstance(), false)
-        }
+        if (savedInstanceState == null)
+            FragmentNavigator(this)
+                    .add(fragmentFrom(Fragments.Splash), false)
     }
 }

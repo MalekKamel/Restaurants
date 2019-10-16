@@ -32,10 +32,10 @@ android {
         }
 
     }
+    dynamicFeatures = [Module.restaurants, Module.splash]
 }
 
 dependencies {
     implementation project(Module.presentation)
     implementation project(Module.data)
-    implementation project(Module.restaurantsList)
 }
