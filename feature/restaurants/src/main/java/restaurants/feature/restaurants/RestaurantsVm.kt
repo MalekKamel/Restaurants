@@ -29,4 +29,3 @@ class RestaurantsVm(dataManager: DataManager) : BaseViewModel(dataManager) {
     }
 
 }
-
