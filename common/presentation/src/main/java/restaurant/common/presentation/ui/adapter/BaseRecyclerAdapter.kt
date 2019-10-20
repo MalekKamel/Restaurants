@@ -12,7 +12,7 @@ import restaurants.common.core.util.CrashlyticsUtil
 
 abstract class BaseRecyclerAdapter<M, VH
 : BaseViewHolder<M>>(
-        var list: MutableList<M>,
+        var list: List<M>,
         var baseView: BaseView
 ) : androidx.recyclerview.widget.RecyclerView.Adapter<VH>(){
 
@@ -51,24 +51,8 @@ abstract class BaseRecyclerAdapter<M, VH
         return baseView.dialogFragment()
     }
 
-    fun addAll(items: List<M>) {
-        list.addAll(items)
-        notifyDataSetChanged()
-    }
-
-    fun replace(items: MutableList<M>) {
-        list = items
-        notifyDataSetChanged()
-    }
-
     fun list(): List<M> {
         return list
     }
-
-    fun clear() {
-        list.clear()
-        notifyDataSetChanged()
-    }
-
 
 }

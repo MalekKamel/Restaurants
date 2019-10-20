@@ -1,4 +1,4 @@
-#Wed Oct 16 22:08:36 EET 2019
+#Mon Oct 21 00:29:49 EET 2019
 base.0=/Users/mac/Desktop/android/projects/me/task/Restaurants/feature/restaurants/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

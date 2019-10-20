@@ -7,7 +7,8 @@ import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.data.DataManager
 import restaurants.common.data.model.Restaurant
 import restaurants.common.core.util.disposeBy
-import restaurants.common.data.model.toPresentation
+import restaurants.common.data.mapper.ListMapperImpl
+import restaurants.common.data.model.RestaurantMapper
 
 val searchModule = module {
     viewModel { RestaurantsVm(get()) }
@@ -15,14 +16,15 @@ val searchModule = module {
 
 class RestaurantsVm(dataManager: DataManager) : BaseViewModel(dataManager) {
 
-    fun restaurants(callback: (MutableList<Restaurant>) -> Unit) {
+    fun restaurants(callback: (List<Restaurant>) -> Unit) {
         val requestInfo = RequestInfo.Builder()
                 .showLoading(true)
                 .inlineErrorHandling { false }
                 .build()
         requester.request(requestInfo) { dm.restaurantsRepo.all() }
                 .subscribe {
-                    callback(it.restaurants.toPresentation())
+                    val list =  ListMapperImpl(RestaurantMapper()).map(it.restaurants)
+                    callback(list)
                 }.disposeBy(disposable = disposables)
     }
 

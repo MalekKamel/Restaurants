@@ -1,6 +1,7 @@
 package restaurants.common.data.model
 
 import com.google.gson.annotations.SerializedName
+import restaurants.common.data.mapper.Mapper
 
 data class RestaurantDto(
         var name: String,
@@ -21,4 +22,14 @@ data class RestaurantDto(
 
 fun List<RestaurantDto>.toPresentation(): MutableList<Restaurant> {
         return map { it.toRestaurant() }.toMutableList()
+}
+
+class RestaurantMapper: Mapper<RestaurantDto, Restaurant> {
+        override fun map(input: RestaurantDto): Restaurant {
+                return Restaurant(
+                        name = input.name,
+                        city = input.city,
+                        poster = input.poster
+                )
+        }
 }

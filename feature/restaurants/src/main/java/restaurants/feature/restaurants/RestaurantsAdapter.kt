@@ -14,7 +14,7 @@ import restaurants.common.data.model.Restaurant
  */
 
 class RestaurantsAdapter(
-        list: MutableList<Restaurant>,
+        list: List<Restaurant>,
         baseView: BaseView
 ) : BaseRecyclerAdapter<Restaurant, RestaurantsAdapter.Vh>(list, baseView) {
 
