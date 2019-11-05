@@ -3,15 +3,6 @@ apply from: "$rootDir/${GradleName.common}"
 
 android {
 
-    signingConfigs {
-        config {
-            keyAlias 'sha'
-            keyPassword '123456sh@b@n'
-            storeFile file('keystores/config.jks')
-            storePassword '123456sh@b@n'
-        }
-    }
-
     defaultConfig {
         applicationId "com.restaurant.app"
     }
