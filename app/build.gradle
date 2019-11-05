@@ -14,11 +14,9 @@ android {
             useProguard false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
 
         debug {
-            signingConfig signingConfigs.config
             testCoverageEnabled true
         }
 
