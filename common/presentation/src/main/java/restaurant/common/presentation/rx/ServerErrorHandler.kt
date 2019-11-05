@@ -7,7 +7,7 @@ import restaurant.common.presentation.R
 
 class ServerErrorHandler : HttpExceptionHandler() {
 
-    override fun supportedExceptions(): List<Int> {
+    override fun supportedErrors(): List<Int> {
         return listOf(500)
     }
 

@@ -5,7 +5,6 @@ import com.sha.rxrequester.Presentable
 import com.sha.rxrequester.RxRequester
 import io.reactivex.disposables.CompositeDisposable
 import restaurant.common.presentation.rx.ServerErrorHandler
-import restaurant.common.presentation.rx.TokenExpiredHandler
 import restaurant.common.presentation.rx.IoExceptionHandler
 import restaurant.common.presentation.rx.NoSuchElementHandler
 import restaurant.common.presentation.rx.OutOfMemoryErrorHandler
@@ -45,7 +44,7 @@ open class BaseViewModel(val dm: DataManager)
                 view.hideLoading()
             }
 
-            override fun onHandleErrorFailed() {
+            override fun onHandleErrorFailed(throwable: Throwable) {
                 view.showErrorInFlashBar(R.string.oops_something_went_wrong)
             }
 
@@ -53,15 +52,14 @@ open class BaseViewModel(val dm: DataManager)
 
        val requester = RxRequester.create(ErrorContract::class.java, presentable)
 
-        if (RxRequester.nonHttpHandlers.isEmpty())
-            RxRequester.nonHttpHandlers = listOf(
+        if (RxRequester.throwableHandlers.isEmpty())
+            RxRequester.throwableHandlers = listOf(
                     IoExceptionHandler(),
                     NoSuchElementHandler(),
                     OutOfMemoryErrorHandler()
             )
         if (RxRequester.httpHandlers.isEmpty())
             RxRequester.httpHandlers = listOf(
-                    TokenExpiredHandler(),
                     ServerErrorHandler()
             )
         return requester
@@ -69,7 +67,6 @@ open class BaseViewModel(val dm: DataManager)
 
     override fun onCleared() {
         disposables.dispose()
-        requester.dispose()
         super.onCleared()
     }
 

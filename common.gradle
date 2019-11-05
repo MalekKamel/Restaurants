@@ -35,6 +35,7 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
         exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/lib_release.kotlin_module'
     }
 }
 

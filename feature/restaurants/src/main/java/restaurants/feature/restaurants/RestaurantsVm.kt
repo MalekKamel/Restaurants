@@ -1,6 +1,6 @@
 package restaurants.feature.restaurants
 
-import com.sha.rxrequester.RequestInfo
+import com.sha.rxrequester.RequestOptions
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import restaurant.common.presentation.ui.vm.BaseViewModel
@@ -17,11 +17,11 @@ val searchModule = module {
 class RestaurantsVm(dataManager: DataManager) : BaseViewModel(dataManager) {
 
     fun restaurants(callback: (List<Restaurant>) -> Unit) {
-        val requestInfo = RequestInfo.Builder()
+        val requestOptions = RequestOptions.Builder()
                 .showLoading(true)
                 .inlineErrorHandling { false }
                 .build()
-        requester.request(requestInfo) { dm.restaurantsRepo.all() }
+        requester.request(requestOptions) { dm.restaurantsRepo.all() }
                 .subscribe {
                     val list =  ListMapperImpl(RestaurantMapper()).map(it.restaurants)
                     callback(list)

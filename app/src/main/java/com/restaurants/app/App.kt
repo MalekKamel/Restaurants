@@ -22,7 +22,7 @@ class App : Application() {
 
             KoinInjector.inject(this)
 
-            NavigatorOptions.instance().frameLayoutId = R.id.mainFrame
+            NavigatorOptions.frameLayoutId = R.id.mainFrame
 
         } catch (e: Exception) {
             CrashlyticsUtil.logAndPrint(e)
