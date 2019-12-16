@@ -12,8 +12,9 @@ interface Alertable {
     fun activity(): BaseActivity?
     fun context(): Context? = activity()
 
-    fun showRetryDialog(options: RetryDialogFrag.Options = RetryDialogFrag.Options.defaultOptions()) {
+    fun showRetryDialog(message: String, options: RetryDialogFrag.Options = RetryDialogFrag.Options.defaultOptions()) {
         activity()?.run {
+            options.message = message
             RetryDialogFrag.options = options
             RetryDialogFrag.show(this)
         }

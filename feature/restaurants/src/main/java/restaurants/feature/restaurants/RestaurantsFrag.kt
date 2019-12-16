@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.frag_restaurants.*
 import org.koin.android.viewmodel.ext.android.viewModel
-import restaurant.common.presentation.ui.dialog.LoadingDialog
 import restaurant.common.presentation.ui.dialog.RetryDialogFrag
 import restaurant.common.presentation.ui.frag.BaseFrag
 import restaurants.common.core.util.linearLayoutManager
@@ -29,6 +28,20 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
         rv.linearLayoutManager(context)
 
         loadRestaurants()
+
+        showMessageDialog("Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message ")
+
+        showLoading()
+        showMessageDialog("Message2222")
+
+        showRetryDialog("Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message")
+        showLoading()
+        showLoading()
+        hideLoading()
+        hideLoading()
+        showLoading()
+        showLoading()
+        hideLoading()
     }
 
     private fun loadRestaurants() {
