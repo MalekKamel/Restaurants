@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentActivity
 import com.sha.kamel.navigator.FragmentNavigator
 import com.trello.rxlifecycle2.components.support.RxDialogFragment
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.core.util.CrashlyticsUtil
 
@@ -23,7 +23,7 @@ import restaurants.common.core.util.CrashlyticsUtil
  * Created by Sha on 9/24/17.
  */
 
-abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView {
+abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), ViewInterface {
     var vm: VM? = null
     var isShown: Boolean = false
         protected set
@@ -93,14 +93,6 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
 
     override fun activity(): BaseActivity {
         return activity
-    }
-
-    override fun dialogFragment(): BaseDialogFrag<*> {
-        return this
-    }
-
-    override fun baseViewModel(): BaseViewModel? {
-        return vm
     }
 
     open fun show(activity: FragmentActivity): BaseDialogFrag<VM> {

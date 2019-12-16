@@ -31,7 +31,7 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
 
     private fun loadRestaurants() {
         vm.restaurants {
-            rv.adapter = RestaurantsAdapter(list = it, baseView = this)
+            rv.adapter = RestaurantsAdapter(list = it, viewInterface = this)
             rv.scheduleLayoutAnimation()
         }
     }

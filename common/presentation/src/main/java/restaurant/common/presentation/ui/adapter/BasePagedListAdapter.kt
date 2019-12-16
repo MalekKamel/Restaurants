@@ -2,11 +2,11 @@ package restaurant.common.presentation.ui.adapter
 
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.util.CrashlyticsUtil
 
 
-abstract class BasePagedListAdapter<T> constructor(protected var view: BaseView, diffCallback: DiffUtil.ItemCallback<T>)
+abstract class BasePagedListAdapter<T> constructor(protected var viewInterface: ViewInterface, diffCallback: DiffUtil.ItemCallback<T>)
     : PagedListAdapter<T, BaseViewHolder<T>>(diffCallback) {
 
 

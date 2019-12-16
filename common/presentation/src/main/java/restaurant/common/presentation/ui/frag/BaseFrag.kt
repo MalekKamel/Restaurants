@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.core.util.CrashlyticsUtil
 
-abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
+abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
 
     abstract val vm: VM
 
@@ -27,7 +27,7 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         try {
-            vm.view = this
+            vm.viewInterface = this
 
         } catch (e: Exception) {
             CrashlyticsUtil.logAndPrint(e)
@@ -76,14 +76,6 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
 
     override fun activity(): BaseActivity? {
         return activity as? BaseActivity
-    }
-
-    override fun fragment(): BaseFrag<*> {
-        return this
-    }
-
-    override fun baseViewModel(): BaseViewModel? {
-        return vm
     }
 
     private fun enableBackNavigation() {

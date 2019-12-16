@@ -6,7 +6,7 @@ import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.dialog.LoadingDialogHelper
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
 import restaurant.common.presentation.ui.vm.DefaultViewModel
-import restaurants.common.core.util.ThreadUtil
+import restaurants.common.core.util.ThreadHelper
 
 class InfoDialog : BaseDialogFrag<DefaultViewModel>() {
 
@@ -76,7 +76,7 @@ object InfoDialogHelper {
     var instances: MutableList<InfoDialog?> = mutableListOf()
 
     fun add(dialog: InfoDialog){
-        ThreadUtil.runOnUiThread {
+        ThreadHelper.runOnUiThread {
             LoadingDialogHelper.instances.forEach {
                 it?.dismiss()
             }

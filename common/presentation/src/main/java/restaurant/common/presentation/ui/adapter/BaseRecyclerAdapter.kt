@@ -1,9 +1,7 @@
 package restaurant.common.presentation.ui.adapter
 
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import restaurant.common.presentation.ui.frag.BaseDialogFrag
-import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.util.CrashlyticsUtil
 
 /**
@@ -13,7 +11,7 @@ import restaurants.common.core.util.CrashlyticsUtil
 abstract class BaseRecyclerAdapter<M, VH
 : BaseViewHolder<M>>(
         var list: List<M>,
-        var baseView: BaseView
+        var viewInterface: ViewInterface
 ) : androidx.recyclerview.widget.RecyclerView.Adapter<VH>(){
 
     protected var isLoadingAdded: Boolean = false
@@ -41,14 +39,6 @@ abstract class BaseRecyclerAdapter<M, VH
 
     fun item(position: Int): M {
         return list[position]
-    }
-
-    protected fun fragment(): Fragment {
-        return baseView.fragment()
-    }
-
-    protected fun dialogFragment(): BaseDialogFrag<*> {
-        return baseView.dialogFragment()
     }
 
     fun list(): List<M> {

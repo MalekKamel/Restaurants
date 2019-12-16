@@ -3,13 +3,11 @@ package restaurant.common.presentation.ui.activity
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import restaurant.common.presentation.ui.view.BaseView
-import restaurant.common.presentation.ui.vm.BaseViewModel
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.util.CrashlyticsUtil
-import restaurants.common.data.pref.SharedPref
 
 abstract class BaseActivity
-    : AppCompatActivity(), BaseView {
+    : AppCompatActivity(), ViewInterface {
 
     abstract var layoutId: Int
 
@@ -49,10 +47,6 @@ abstract class BaseActivity
 
     override fun activity(): BaseActivity {
         return this
-    }
-
-    override fun baseViewModel(): BaseViewModel? {
-        return null
     }
 
 }

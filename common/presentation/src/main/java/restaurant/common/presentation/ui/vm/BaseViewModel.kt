@@ -9,7 +9,7 @@ import restaurant.common.presentation.rx.IoExceptionHandler
 import restaurant.common.presentation.rx.NoSuchElementHandler
 import restaurant.common.presentation.rx.OutOfMemoryErrorHandler
 import restaurant.common.presentation.rx.ErrorContract
-import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurant.common.presentation.R
 import restaurants.common.data.DataManager
 import restaurants.common.data.pref.SharedPref
@@ -17,7 +17,7 @@ import restaurants.common.data.pref.SharedPref
 open class BaseViewModel(val dm: DataManager)
     : ViewModel() {
 
-    lateinit var view: BaseView
+    lateinit var viewInterface: ViewInterface
     var pref: SharedPref = dm.pref
     val disposables: CompositeDisposable = CompositeDisposable()
     var requester: RxRequester
@@ -29,23 +29,23 @@ open class BaseViewModel(val dm: DataManager)
     private fun setupRequester(): RxRequester {
         val presentable = object: Presentable {
             override fun showError(error: String) {
-                view.showErrorInFlashBar(error)
+                viewInterface.showErrorInFlashBar(error)
             }
 
             override fun showError(error: Int) {
-                view.showErrorInFlashBar(error)
+                viewInterface.showErrorInFlashBar(error)
             }
 
             override fun showLoading() {
-                view.showLoading()
+                viewInterface.showLoading()
             }
 
             override fun hideLoading() {
-                view.hideLoading()
+                viewInterface.hideLoading()
             }
 
             override fun onHandleErrorFailed(throwable: Throwable) {
-                view.showErrorInFlashBar(R.string.oops_something_went_wrong)
+                viewInterface.showErrorInFlashBar(R.string.oops_something_went_wrong)
             }
 
         }

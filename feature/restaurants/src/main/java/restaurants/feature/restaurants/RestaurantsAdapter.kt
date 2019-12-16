@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_restaurant.view.*
 import restaurant.common.presentation.ui.adapter.BaseRecyclerAdapter
 import restaurant.common.presentation.ui.adapter.BaseViewHolder
-import restaurant.common.presentation.ui.view.BaseView
+import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.picasso.PicassoUtil
 import restaurants.common.data.model.Restaurant
 
@@ -15,8 +15,8 @@ import restaurants.common.data.model.Restaurant
 
 class RestaurantsAdapter(
         list: List<Restaurant>,
-        baseView: BaseView
-) : BaseRecyclerAdapter<Restaurant, RestaurantsAdapter.Vh>(list, baseView) {
+        viewInterface: ViewInterface
+) : BaseRecyclerAdapter<Restaurant, RestaurantsAdapter.Vh>(list, viewInterface) {
 
     override fun getViewHolder(viewGroup: ViewGroup, viewType: Int): Vh {
         return Vh(viewGroup)
