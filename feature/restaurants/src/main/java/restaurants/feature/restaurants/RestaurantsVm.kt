@@ -7,7 +7,7 @@ import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.data.DataManager
 import restaurants.common.data.model.Restaurant
 import restaurants.common.core.util.disposeBy
-import restaurants.common.data.mapper.ListMapperImpl
+import restaurants.common.data.mapper.ListMapper
 import restaurants.common.data.model.RestaurantMapper
 
 val searchModule = module {
@@ -23,7 +23,7 @@ class RestaurantsVm(dataManager: DataManager) : BaseViewModel(dataManager) {
                 .build()
         requester.request(requestOptions) { dm.restaurantsRepo.all() }
                 .subscribe {
-                    val list =  ListMapperImpl(RestaurantMapper()).map(it.restaurants)
+                    val list =  ListMapper(RestaurantMapper()).map(it.restaurants)
                     callback(list)
                 }.disposeBy(disposable = disposables)
     }
