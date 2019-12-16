@@ -13,7 +13,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null)
-            FragmentNavigator(this)
-                    .replace(fragmentFrom(Fragments.Splash), false)
+            FragmentNavigator(this).replace(fragmentFrom(Fragments.Splash), false)
     }
 }

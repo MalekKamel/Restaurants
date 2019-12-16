@@ -15,11 +15,10 @@ class SplashFrag : BaseFrag<SplashViewModel>() {
     override val vm: SplashViewModel by viewModel()
 
     override fun doOnViewCreated() {
-        Handler().postDelayed( {
-            FragmentNavigator(activity as FragmentActivity)
-                    .add(fragmentFrom(Fragments.Restaurants),
-                            false)
-        }, 2000)
+        Runnable {
+           FragmentNavigator(activity as FragmentActivity)
+                   .add(fragmentFrom(Fragments.Restaurants), false)
+       }.apply { Handler().postDelayed(this, 2000)  }
     }
 
 }
