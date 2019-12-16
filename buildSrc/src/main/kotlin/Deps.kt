@@ -34,6 +34,7 @@ object Versions {
     const val sha_formValidator = "1.0.0"
     const val sha_navigator = "1.4.0"
     const val sha_rxRequester = "0.5.0"
+    const val sha_modelMapper = "0.1.0"
     const val flashBar = "1.0.3"
     const val androidx_junit = "1.1.1"
     const val androidx_espressoCore = "3.2.0"
@@ -121,6 +122,7 @@ object Deps {
     const val sha_formValidator  = "com.github.ShabanKamell:FormValidator:${Versions.sha_formValidator}"
     const val sha_navigator = "com.github.ShabanKamell:Navigator:${Versions.sha_navigator}"
     const val sha_rxRequester = "com.github.ShabanKamell:RxRequester:${Versions.sha_rxRequester}"
+    const val sha_modelMapper = "com.github.ShabanKamell:ModelMapper:${Versions.sha_modelMapper}"
 
     const val flashBar = "com.andrognito.flashbar:flashbar:${Versions.flashBar}"
 

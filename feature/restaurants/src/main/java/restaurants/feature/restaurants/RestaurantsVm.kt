@@ -1,5 +1,6 @@
 package restaurants.feature.restaurants
 
+import com.sha.modelmapper.ListMapper
 import com.sha.rxrequester.RequestOptions
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -7,7 +8,6 @@ import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.data.DataManager
 import restaurants.common.data.model.Restaurant
 import restaurants.common.core.util.disposeBy
-import restaurants.common.data.mapper.ListMapper
 import restaurants.common.data.model.RestaurantMapper
 
 val searchModule = module {

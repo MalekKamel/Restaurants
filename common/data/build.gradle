@@ -10,7 +10,6 @@ android {
         debug {
             buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlDev}\"")
         }
-
     }
 }
 
@@ -23,5 +22,7 @@ dependencies {
 
     api Deps.okHttp_runtime
     api Deps.okHttp_interceptor
+
+    api Deps.sha_modelMapper
 
 }
