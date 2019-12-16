@@ -1,6 +1,5 @@
 
 object Versions {
-
     const val androidx_appCompat = "1.0.0-beta01"
     const val androidx_core = "1.0.0-beta01"
     const val androidx_recyclerView = "1.0.0"
@@ -33,15 +32,6 @@ object Versions {
     const val flashBar = "1.0.3"
     const val androidx_coreKtx = "1.1.0"
     const val androidx_paging = "2.0.0-rc01"
-
-    // >>>> TEST VERSIONS
-    const val test_junit = "4.12"
-    const val test_jUnitParams = "1.1.1"
-    const val test_kotlinTestJunit5 = "3.4.0"
-    const val test_kotlinTestExtKoin = "3.4.0"
-    const val test_espressoCore = "3.1.0-alpha4"
-    const val androidx_junit = "1.1.1"
-    const val androidx_espressoCore = "3.2.0"
 
 }
 
@@ -118,16 +108,26 @@ object Deps {
 
 }
 
+object TestVersions {
+    const val test_junit = "4.12"
+    const val test_jUnitParams = "1.1.1"
+    const val test_kotlinTestJunit5 = "3.4.0"
+    const val test_kotlinTestExtKoin = "3.4.0"
+    const val test_espressoCore = "3.1.0-alpha4"
+    const val androidx_junit = "1.1.1"
+    const val androidx_espressoCore = "3.2.0"
+}
+
 object TestDeps {
-    const val junit = "junit:junit:${Versions.test_junit}"
-    const val jUnitParams = "pl.pragmatists:JUnitParams:${Versions.test_jUnitParams}"
+    const val junit = "junit:junit:${TestVersions.test_junit}"
+    const val jUnitParams = "pl.pragmatists:JUnitParams:${TestVersions.test_jUnitParams}"
 
-    const val kotlinTestJunit5 = "io.kotlintest:kotlintest-runner-junit5:${Versions.test_kotlinTestJunit5}"
-    const val kotlinTestExtKoin = "io.kotlintest:kotlintest-extensions-koin:${Versions.test_kotlinTestExtKoin}"
+    const val kotlinTestJunit5 = "io.kotlintest:kotlintest-runner-junit5:${TestVersions.test_kotlinTestJunit5}"
+    const val kotlinTestExtKoin = "io.kotlintest:kotlintest-extensions-koin:${TestVersions.test_kotlinTestExtKoin}"
 
-    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.test_espressoCore}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${TestVersions.test_espressoCore}"
     const val koin_test = "org.koin:koin-android-ext:${Versions.koin}"
 
-    const val androidx_espressoCore = "androidx.test.espresso:espresso-core:${Versions.androidx_espressoCore}"
-    const val androidx_junit = "androidx.test.ext:junit:${Versions.androidx_junit}"
+    const val androidx_espressoCore = "androidx.test.espresso:espresso-core:${TestVersions.androidx_espressoCore}"
+    const val androidx_junit = "androidx.test.ext:junit:${TestVersions.androidx_junit}"
 }
