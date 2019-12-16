@@ -1,7 +1,6 @@
-apply from: "$rootDir/${GradleName.commonDynamicFeature}"
+apply from: "$rootDir/${GradleName.commonAndroidLib}"
 
 dependencies {
-    implementation project(Module.app)
     implementation project(Module.presentation)
     implementation project(Module.data)
 }

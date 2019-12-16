@@ -12,6 +12,7 @@ import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurant.common.presentation.ui.view.ViewInterface
 import restaurant.common.presentation.ui.vm.BaseViewModel
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
 
@@ -26,12 +27,7 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try {
-            vm.viewInterface = this
-
-        } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
-        }
+        vm.viewInterface = this
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -45,9 +41,8 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
             setupSwipeRefresh()
             enableBackNavigation()
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
-
     }
 
     private fun setupSwipeRefresh() {
@@ -64,19 +59,16 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
      */
     protected open fun onSwipeRefresh() {}
 
-
     override fun onResume() {
         super.onResume()
         try {
             doOnResume()
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
     }
 
-    override fun activity(): BaseActivity? {
-        return activity as? BaseActivity
-    }
+    override fun activity(): BaseActivity? = activity as? BaseActivity
 
     private fun enableBackNavigation() {
         if (!hasBackNavigation || view == null) return
@@ -88,7 +80,5 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
         backButton.setOnClickListener { activity()?.onBackPressed() }
     }
 
-    fun <T : View> findViewById(@IdRes id: Int): T {
-        return activity!!.findViewById(id)
-    }
+    fun <T : View> findViewById(@IdRes id: Int): T = activity!!.findViewById(id)
 }

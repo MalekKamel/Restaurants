@@ -3,6 +3,7 @@ package restaurant.common.presentation.ui.adapter
 import android.view.ViewGroup
 import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 /**
  * Created by Sha on 4/20/17.
@@ -28,7 +29,7 @@ abstract class BaseRecyclerAdapter<M, VH
             holder.item = item
             holder.bindView(item)
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
 
     }

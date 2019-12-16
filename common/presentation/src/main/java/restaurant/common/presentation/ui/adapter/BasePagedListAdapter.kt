@@ -4,6 +4,7 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 
 abstract class BasePagedListAdapter<T> constructor(protected var viewInterface: ViewInterface, diffCallback: DiffUtil.ItemCallback<T>)
@@ -15,8 +16,7 @@ abstract class BasePagedListAdapter<T> constructor(protected var viewInterface: 
             val item = getItem(position)
             if( item != null) holder.bindView(item)
         } catch (e: Exception) {
-            e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            e.reportAndPrint()
         }
 
     }

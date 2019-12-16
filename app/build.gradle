@@ -21,10 +21,11 @@ android {
         }
 
     }
-    dynamicFeatures = [Module.restaurants, Module.splash]
 }
 
 dependencies {
+    implementation project(Module.restaurants)
+    implementation project(Module.splash)
     implementation project(Module.presentation)
     implementation project(Module.data)
 }

@@ -1,7 +1,7 @@
 package restaurant.common.presentation.rx
 
+import com.sha.rxrequester.Presentable
 import com.sha.rxrequester.exception.handler.http.HttpExceptionHandler
-import com.sha.rxrequester.exception.handler.http.HttpExceptionInfo
 import restaurant.common.presentation.R
 
 
@@ -11,8 +11,8 @@ class ServerErrorHandler : HttpExceptionHandler() {
         return listOf(500)
     }
 
-    override fun handle(info: HttpExceptionInfo) {
-        info.presentable.showError(R.string.oops_something_went_wrong)
+    override fun handle(throwable: Throwable, presentable: Presentable, errorCode: Int, errorBody: String) {
+        presentable.showError(R.string.oops_something_went_wrong)
     }
 
 }

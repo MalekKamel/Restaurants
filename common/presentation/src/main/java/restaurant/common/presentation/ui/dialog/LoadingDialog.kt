@@ -1,36 +1,58 @@
 package restaurant.common.presentation.ui.dialog
 
+import android.content.DialogInterface
+import androidx.fragment.app.FragmentActivity
 import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
-import restaurant.common.presentation.ui.vm.BaseViewModel
-import restaurants.common.core.util.ThreadHelper
-import restaurants.common.data.DataManager
 
-class LoadingDialog(var isCancellable: Boolean = false) : BaseDialogFrag<LoadingVm>() {
+object LoadingDialog : BaseDialogFrag() {
 
-     override var layoutId: Int = R.layout.frag_dialog_loading
+    override var layoutId: Int = R.layout.frag_dialog_loading
+    var options: Options? = Options.defaultOptions()
+        set(value) {
+            if (isDisplayed) return
+            field = value
+        }
 
-    companion object {
-        fun newInstance(isCancellable: Boolean = false): LoadingDialog {
-            return LoadingDialog(isCancellable)
+    override fun isCancelable(): Boolean  = options?.isCancellable ?: false
+
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        cleanup()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cleanup()
+    }
+
+    private fun cleanup() {
+        options = null
+    }
+
+    data class Options(
+            var retryCallback: (() -> Unit)? = null,
+            var dismissCallback: (() -> Unit)? = null,
+            var isCancellable: Boolean = false
+    ){
+
+        class Builder {
+            private val options = Options()
+
+            fun isCancellable(cancellable: Boolean): Builder {
+                options.isCancellable = cancellable
+                return this
+            }
+
+            fun build() = options
+        }
+
+        companion object {
+            fun defaultOptions(): Options = Builder().build()
+            fun create(block: Options.() -> Unit) = Options().apply { block() }
         }
     }
 
-}
-
-class LoadingVm(dataManager: DataManager) : BaseViewModel(dataManager)
-
-object LoadingDialogHelper {
-    var instances: MutableList<LoadingDialog?> = mutableListOf()
-
-    fun add(dialog: LoadingDialog){
-        ThreadHelper.runOnUiThread {
-            instances.forEach { it?.dismiss() }
-            instances.clear()
-            instances.add(dialog)
-        }
-    }
-
-    fun hide() = ThreadHelper.runOnUiThread { instances.forEach { it?.dismiss() } }
+    fun show(activity: FragmentActivity) = super.show(activity, javaClass.name)
 
 }

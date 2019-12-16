@@ -7,6 +7,7 @@ import androidx.annotation.StringRes
 import com.restaurants.app.di.KoinInjector
 import com.sha.kamel.navigator.NavigatorOptions
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 /**
  * Created by Sha on 13/04/17.
@@ -25,7 +26,7 @@ class App : Application() {
             NavigatorOptions.frameLayoutId = R.id.mainFrame
 
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
 
     }

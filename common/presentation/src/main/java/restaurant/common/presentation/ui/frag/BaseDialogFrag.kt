@@ -1,7 +1,6 @@
 package restaurant.common.presentation.ui.frag
 
 import android.app.Dialog
-import android.content.Context
 import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -16,41 +15,26 @@ import com.sha.kamel.navigator.FragmentNavigator
 import com.trello.rxlifecycle2.components.support.RxDialogFragment
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurant.common.presentation.ui.view.ViewInterface
-import restaurant.common.presentation.ui.vm.BaseViewModel
-import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 /**
  * Created by Sha on 9/24/17.
  */
 
-abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), ViewInterface {
-    var vm: VM? = null
-    var isShown: Boolean = false
-        protected set
-
-    protected var isDismissed: Boolean = false
-
-    private lateinit var activity: BaseActivity
-
+abstract class BaseDialogFrag : RxDialogFragment(), ViewInterface {
+    protected open var transparentWindow: Boolean  = true
     protected open var isCanceledOnTouchOutside: Boolean = false
-        get() = false
-
     private var onDismissListener: (() -> Unit)? = null
-
     abstract var layoutId: Int
-    protected open fun setupUi() {}
     protected open fun doOnViewCreated() {}
+    var isDisplayed: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         try {
-            activity = getActivity() as BaseActivity
-
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
-
-        isShown = true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,75 +42,51 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), ViewInte
         dialog?.setCanceledOnTouchOutside(isCanceledOnTouchOutside)
 
         try {
-            setupUi()
             doOnViewCreated()
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
-
     }
 
     @Nullable
     override fun onCreateView(
             inflater: LayoutInflater,
             @Nullable container: ViewGroup?,
-            @Nullable savedInstanceState: Bundle?
-    ): View? {
+            @Nullable savedInstanceState: Bundle?): View? {
         return inflater.inflate(layoutId, container, false)
-    }
-
-    protected fun transparentWindow(): Boolean {
-        return true
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
         val w = dialog.window
         // Hide title
-        if (w != null) {
-            w.requestFeature(Window.FEATURE_NO_TITLE)
-            if (transparentWindow())
-                w.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        }
+        w?.requestFeature(Window.FEATURE_NO_TITLE)
+        if (transparentWindow) w?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         return dialog
     }
 
-    override fun activity(): BaseActivity {
-        return activity
-    }
+    override fun activity(): BaseActivity = activity as BaseActivity
 
-    open fun show(activity: FragmentActivity): BaseDialogFrag<VM> {
-        try {
-            if (!isShown)
-                FragmentNavigator(activity).showDialogFragment(this)
-        } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
-        }
-
+    open fun show(activity: FragmentActivity, tag: String = javaClass.name): BaseDialogFrag {
+        if (isDisplayed) return this
+        FragmentNavigator(activity).showDialogFragment(this)
+        isDisplayed = true
         return this
     }
 
-    fun onDismissListener(callback: () -> Unit): BaseDialogFrag<VM> {
+    fun onDismissListener(callback: () -> Unit): BaseDialogFrag {
         this.onDismissListener = callback
         return this
     }
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        if (onDismissListener != null)
-            onDismissListener!!.invoke()
+        onDismissListener?.invoke()
+        isDisplayed = false
     }
 
-    override fun dismiss() {
-        super.dismiss()
-        isShown = false
-        isDismissed = true
+    override fun onDestroy() {
+        super.onDestroy()
+        isDisplayed = false
     }
-
-    override fun getContext(): Context? {
-        return activity
-    }
-
-
-
 }

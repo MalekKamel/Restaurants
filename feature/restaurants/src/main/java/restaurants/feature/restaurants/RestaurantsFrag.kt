@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.frag_restaurants.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import restaurant.common.presentation.ui.dialog.LoadingDialog
+import restaurant.common.presentation.ui.dialog.RetryDialogFrag
 import restaurant.common.presentation.ui.frag.BaseFrag
 import restaurants.common.core.util.linearLayoutManager
 import restaurants.feature.restaurants.di.injectFeature
@@ -37,8 +39,9 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
     }
 
     override fun onSwipeRefresh() { loadRestaurants() }
-    override fun showLoading() = toggleRefresh(true)
-    override fun hideLoading() = toggleRefresh(false)
+
+//    override fun showLoading() = toggleRefresh(true)
+//    override fun hideLoading() = toggleRefresh(false)
     private fun toggleRefresh(show: Boolean) { swipeRefresh.isRefreshing = show }
 
 }

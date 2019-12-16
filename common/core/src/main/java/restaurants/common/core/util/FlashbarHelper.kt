@@ -6,7 +6,7 @@ import androidx.annotation.ColorRes
 
 import com.andrognito.flashbar.Flashbar
 
-object FlashbarUtil {
+object FlashbarHelper {
 
     fun show(
             message: String,
@@ -24,8 +24,7 @@ object FlashbarUtil {
                     .build()
                     .show()
         } catch (e: Exception) {
-            e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            e.reportAndPrint()
         }
 
     }

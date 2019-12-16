@@ -1,44 +1,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:minWidth="200dp"
-    android:minHeight="@dimen/minHeight_info_dialog"
-    android:paddingTop="@dimen/common_margin"
-    android:background="@drawable/rounded_corners"
-    android:paddingBottom="@dimen/common_margin">
+    >
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        >
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:clipChildren="true"
+        app:cardCornerRadius="6dp"
+        android:paddingTop="@dimen/common_margin"
+        android:paddingBottom="@dimen/common_margin">
 
-        <restaurant.common.presentation.ui.custom.AppTextView
-            android:id="@+id/tv_message"
-            tools:text="Message"
-            android:textSize="@dimen/common_text_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/space_info_dialog" />
-
-        <restaurant.common.presentation.ui.custom.CustomBtn
-            android:id="@+id/btn_close"
-            android:text="@string/dismiss"
-            android:layout_gravity="center"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginTop="@dimen/common_margin"
-            android:layout_marginStart="@dimen/margin_login_btn_start_end"
-            android:layout_marginEnd="@dimen/margin_login_btn_start_end"
-            />
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textSize="@dimen/common_text_size"
+                android:textStyle="bold"
+                tools:text="Message" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="Don't show again"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="visible"
+                tools:visibility="visible"/>
+
+            <Button
+                android:id="@+id/btnDismiss"
+                android:text="Dismiss"
+                android:textColor="@color/black_light"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@color/transparent"
+                />
 
 
-    </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

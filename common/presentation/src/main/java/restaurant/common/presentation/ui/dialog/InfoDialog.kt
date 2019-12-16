@@ -1,67 +1,67 @@
 package restaurant.common.presentation.ui.dialog
 
-import android.content.DialogInterface
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.frag.BaseDialogFrag
 
-object RetryDialogFrag : BaseDialogFrag() {
-
+object InfoDialog : BaseDialogFrag() {
+    enum class MessageType { INFO, WARNING, EXCEPTION }
     var options: Options? = Options.defaultOptions()
         set(value) {
             if (isDisplayed) return
             field = value
         }
 
-    override var layoutId: Int = R.layout.frag_dialog_retry
+    override var layoutId: Int = R.layout.frag_dialog_info
 
     private val tvMessage: TextView
-        get() = view!!.findViewById(R.id.tvMessage)
+    get() = view!!.findViewById(R.id.tvMessage)
 
-    private val btnRetry: Button
-        get() = view!!.findViewById(R.id.btnRetry)
-
-    private val btnDismiss: TextView
+    private val btnDismiss: Button
         get() = view!!.findViewById(R.id.btnDismiss)
 
     override fun doOnViewCreated() {
-        options?.message?.let { tvMessage.text = it }
-        btnRetry.setOnClickListener {
-            options?.retryCallback?.invoke()
-            dismiss()
-        }
+        dialog?.setCanceledOnTouchOutside(options?.isCancellable ?: true)
+
+        tvMessage.text = options?.message
+
+        var color = -1
+            when (options?.messageType) {
+                MessageType.WARNING -> {
+                    color = R.color.warning
+                    tvMessage.setTextColor(ContextCompat.getColor(context!!, R.color.warning))
+                }
+                MessageType.EXCEPTION -> color = R.color.exception
+                else -> {}
+            }
+
+        if (color != -1) tvMessage.setTextColor(ContextCompat.getColor(context!!, color))
 
         btnDismiss.setOnClickListener {
             options?.dismissCallback?.invoke()
+            // Try to close all dialogs if duplicated
             dismiss()
         }
     }
 
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-        cleanup()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        cleanup()
-    }
-
-    private fun cleanup() {
-        options = null
-    }
-
     data class Options(
+            var message: String? = null,
             var retryCallback: (() -> Unit)? = null,
             var dismissCallback: (() -> Unit)? = null,
             var isCancellable: Boolean = true,
-            var message: String? = null
+            var messageType: MessageType? = null
     ){
 
         class Builder {
             private val options = Options()
+
+            fun message(message: String?): Builder {
+                options.message = message
+                return this
+            }
 
             fun retryCallback(callback: (() -> Unit)?): Builder {
                 options.retryCallback = callback
@@ -78,8 +78,8 @@ object RetryDialogFrag : BaseDialogFrag() {
                 return this
             }
 
-            fun message(message: String?): Builder {
-                options.message = message
+            fun messageType(type: MessageType?): Builder {
+                options.messageType = type
                 return this
             }
 
@@ -88,15 +88,12 @@ object RetryDialogFrag : BaseDialogFrag() {
 
         companion object {
             fun defaultOptions(): Options = Builder().build()
-            fun create(message: String?, block: Options.() -> Unit) = Options().apply {
-                this.message = message
-                block()
-            }
+            fun create(type: MessageType, block: Options.() -> Unit) = Options().apply {
+                messageType = type
+                block() }
         }
     }
 
     fun show(activity: FragmentActivity) = super.show(activity, javaClass.name)
-
 }
-
 

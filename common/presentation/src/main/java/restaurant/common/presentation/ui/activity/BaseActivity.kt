@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import restaurant.common.presentation.ui.view.ViewInterface
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 abstract class BaseActivity
     : AppCompatActivity(), ViewInterface {
@@ -26,27 +27,10 @@ abstract class BaseActivity
             doOnCreate(savedInstanceState)
 
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            e.reportAndPrint()
         }
-
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        try {
-
-        } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
-        }
-
-    }
-
-    override fun context(): Context {
-        return this
-    }
-
-    override fun activity(): BaseActivity {
-        return this
-    }
-
+    override fun context(): Context = this
+    override fun activity(): BaseActivity = this
 }

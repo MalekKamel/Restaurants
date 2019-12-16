@@ -4,6 +4,7 @@ import android.graphics.*
 import com.squareup.picasso.Transformation
 import restaurants.common.core.io.BitmapUtil
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 
 class CircleTransform : Transformation {
     override fun transform(source: Bitmap): Bitmap {
@@ -50,8 +51,7 @@ class CircleTransform : Transformation {
 
             return bitmap
         } catch (e: Exception) {
-            e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            e.reportAndPrint()
             source.recycle()
             return BitmapUtil.empty()
         }

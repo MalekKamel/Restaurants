@@ -5,43 +5,19 @@ import android.widget.Toast
 import restaurant.common.presentation.ui.StatusItem
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurant.common.presentation.ui.dialog.RetryDialogFrag
-import restaurant.common.presentation.ui.dialog.info.InfoDialog
-import restaurant.common.presentation.ui.dialog.info.InfoDialogHelper
-import restaurants.common.core.util.FlashbarUtil
-import restaurants.common.core.util.ThreadHelper
+import restaurant.common.presentation.ui.dialog.InfoDialog
+import restaurants.common.core.util.FlashbarHelper
 
 interface Alertable {
     fun activity(): BaseActivity?
-
     fun context(): Context? = activity()
 
-    fun showRetryDialog(retryCallback: () -> Unit, closeCallback: () -> Unit) {
-        ThreadHelper.runOnUiThread {
-            RetryDialogFrag.newInstance(
-                    retryCallback,
-                    closeCallback).show(activity()!!)
+    fun showRetryDialog(options: RetryDialogFrag.Options = RetryDialogFrag.Options.defaultOptions()) {
+        activity()?.run {
+            RetryDialogFrag.options = options
+            RetryDialogFrag.show(this)
         }
     }
-
-    fun showRetryDialog(message: String, retryCallback: () -> Unit, closeCallback: () -> Unit) {
-        ThreadHelper.runOnUiThread {
-            RetryDialogFrag.newInstance(
-                    message,
-                    retryCallback,
-                    closeCallback).show(activity()!!)
-        }
-    }
-
-    private fun showInfoDialog(msg: String?, type: InfoDialog.MessageType) {
-        ThreadHelper.runOnUiThread {
-            if (msg == null) return@runOnUiThread
-            val infoDialog = InfoDialog.newInstance(type, msg, false, null)
-            infoDialog.show(activity()!!)
-            InfoDialogHelper.add(infoDialog)
-        }
-    }
-
-    fun showWarningDialog(msg: String?) = showInfoDialog(type = InfoDialog.MessageType.WARNING, msg = msg)
 
     fun toast(resId: Int) = Toast.makeText(context(), resId, Toast.LENGTH_LONG).show()
 
@@ -50,33 +26,37 @@ interface Alertable {
     fun showErrorInFlashBar(msgRes: Int) = showErrorInFlashBar(context()!!.getString(msgRes))
 
     fun showMessageInFlashBar(status: StatusItem) {
-        ThreadHelper.runOnUiThread {
-            if (activity() == null) return@runOnUiThread
-
-            FlashbarUtil.show(
-                    status.statusMessage,
-                    status.getStatusColor(),
-                    activity()!!
-            )
-        }
+        activity()?.run { FlashbarHelper.show(status.statusMessage, status.getStatusColor(), this) }
     }
 
     fun showSuccessInFlashBar(msg: String) = showMessageInFlashBar(StatusItem(StatusItem.SUCCESS, msg))
-
     fun showSuccessInFlashBar(msgRes: Int) = showSuccessInFlashBar(context()!!.getString(msgRes))
+
+    private fun showInfoDialog(options: InfoDialog.Options = InfoDialog.Options.defaultOptions()) {
+        if(options.message == null) return
+        activity()?.run {
+            InfoDialog.options = options
+            InfoDialog.show(this)
+        }
+    }
+
+    fun showWarningDialog(msg: String?) {
+        showInfoDialog(InfoDialog.Options.create(InfoDialog.MessageType.WARNING) { message = msg })
+    }
 
     fun showWarningDialog(msgRes: Int) = showWarningDialog(context()?.getString(msgRes))
 
+    fun showMessageDialog(msg: String?) {
+        showInfoDialog(InfoDialog.Options.create(InfoDialog.MessageType.INFO) { message = msg })
+    }
+
+    fun showMessageDialog(msgRes: Int) {
+        showInfoDialog(InfoDialog.Options.create(InfoDialog.MessageType.INFO) { message = context()?.getString(msgRes) })
+    }
+
     fun showErrorDialog(errorRes: Int) = showErrorDialog(context()?.getString(errorRes))
 
-    fun showMessageDialog(msg: String?) = showMessageDialog(msg, null)
-
-    fun showMessageDialog(msg: String?, closeCallback: (() -> Unit)?) = showInfoDialog(type = InfoDialog.MessageType.INFO, msg = msg)
-
-    fun showMessageDialog(msgRes: Int) = showMessageDialog(context()?.getString(msgRes))
-
-    fun showMessageDialog(msgRes: Int, closeCallback: (() -> Unit)?) = showMessageDialog(context()?.getString(msgRes), closeCallback)
-
-    fun showErrorDialog(error: String?) = showInfoDialog(type = InfoDialog.MessageType.EXCEPTION, msg = error)
-
+    fun showErrorDialog(error: String?) {
+        showInfoDialog(InfoDialog.Options.create(InfoDialog.MessageType.EXCEPTION) { message = error })
+    }
 }

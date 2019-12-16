@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
 import org.koin.java.KoinJavaComponent
 import restaurants.common.core.util.CrashlyticsUtil
+import restaurants.common.core.util.reportAndPrint
 import java.io.File
 
 /**
@@ -61,8 +62,7 @@ class PicassoUtil {
                          })
 
             } catch (e: Exception) {
-                e.printStackTrace()
-                CrashlyticsUtil.log(e)
+                e.reportAndPrint()
             }
 
         }
