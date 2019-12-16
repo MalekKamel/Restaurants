@@ -25,34 +25,27 @@ object Versions {
     const val koin = "2.0.1"
     const val arch_navigationFragment = "1.0.0"
     const val arch_navigationUi = "1.0.0"
-    const val test_junit = "4.12"
-    const val test_jUnitParams = "1.1.1"
-    const val test_kotlinTestJunit5 = "3.4.0"
-    const val test_kotlinTestExtKoin = "3.4.0"
-    const val test_espressoCore = "3.1.0-alpha4"
     const val androidx_lifeCycle = "2.0.0-rc01"
     const val sha_formValidator = "1.0.0"
     const val sha_navigator = "1.4.0"
     const val sha_rxRequester = "0.5.0"
     const val sha_modelMapper = "0.1.0"
     const val flashBar = "1.0.3"
-    const val androidx_junit = "1.1.1"
-    const val androidx_espressoCore = "3.2.0"
     const val androidx_coreKtx = "1.1.0"
     const val androidx_paging = "2.0.0-rc01"
+
+    // >>>> TEST VERSIONS
+    const val test_junit = "4.12"
+    const val test_jUnitParams = "1.1.1"
+    const val test_kotlinTestJunit5 = "3.4.0"
+    const val test_kotlinTestExtKoin = "3.4.0"
+    const val test_espressoCore = "3.1.0-alpha4"
+    const val androidx_junit = "1.1.1"
+    const val androidx_espressoCore = "3.2.0"
 
 }
 
 object Deps {
-
-    // <editor-fold desc="test">
-    const val test_junit = "junit:junit:${Versions.test_junit}"
-    const val test_jUnitParams = "pl.pragmatists:JUnitParams:${Versions.test_jUnitParams}"
-    const val test_kotlinTestJunit5 = "io.kotlintest:kotlintest-runner-junit5:${Versions.test_kotlinTestJunit5}"
-    const val test_kotlinTestExtKoin = "io.kotlintest:kotlintest-extensions-koin:${Versions.test_kotlinTestExtKoin}"
-    const val test_espressoCore = "androidx.test.espresso:espresso-core:${Versions.test_espressoCore}"
-    // </editor-fold>
-
     // <editor-fold desc="intuit">
     const val sdp = "com.intuit.sdp:sdp-android:${Versions.intuit}"
     const val ssp = "com.intuit.ssp:ssp-android:${Versions.intuit}"
@@ -64,7 +57,6 @@ object Deps {
     const val koin_viewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
     const val koin_java = "org.koin:koin-java:${Versions.koin}"
     const val koin_ext = "org.koin:koin-android-ext:${Versions.koin}"
-    const val koin_test = "org.koin:koin-android-ext:${Versions.koin}"
     // </editor-fold>
 
     // <editor-fold desc="arch">
@@ -83,8 +75,6 @@ object Deps {
     const val androidx_constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintLayout}"
     const val androidx_lifeCycle = "androidx.lifecycle:lifecycle-extensions:${Versions.androidx_lifeCycle}"
     const val androidx_lifeCycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.androidx_lifeCycle}"
-    const val androidx_junit = "androidx.test.ext:junit:${Versions.androidx_junit}"
-    const val androidx_espressoCore = "androidx.test.espresso:espresso-core:${Versions.androidx_espressoCore}"
     const val androidx_coreKtx = "androidx.core:core-ktx:${Versions.androidx_coreKtx}"
     const val androidx_paging = "androidx.paging:paging-runtime:${Versions.androidx_paging}"
     // </editor-fold>
@@ -100,7 +90,7 @@ object Deps {
     const val retrofit_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     // </editor-fold>
 
-    // <editor-fold desc="okhttp">
+    // <editor-fold desc="OkHttp">
     const val picasso  = "com.squareup.picasso:picasso:${Versions.picasso}"
     const val okHttp_runtime = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     const val okHttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
@@ -126,4 +116,18 @@ object Deps {
 
     const val flashBar = "com.andrognito.flashbar:flashbar:${Versions.flashBar}"
 
+}
+
+object TestDeps {
+    const val junit = "junit:junit:${Versions.test_junit}"
+    const val jUnitParams = "pl.pragmatists:JUnitParams:${Versions.test_jUnitParams}"
+
+    const val kotlinTestJunit5 = "io.kotlintest:kotlintest-runner-junit5:${Versions.test_kotlinTestJunit5}"
+    const val kotlinTestExtKoin = "io.kotlintest:kotlintest-extensions-koin:${Versions.test_kotlinTestExtKoin}"
+
+    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.test_espressoCore}"
+    const val koin_test = "org.koin:koin-android-ext:${Versions.koin}"
+
+    const val androidx_espressoCore = "androidx.test.espresso:espresso-core:${Versions.androidx_espressoCore}"
+    const val androidx_junit = "androidx.test.ext:junit:${Versions.androidx_junit}"
 }
