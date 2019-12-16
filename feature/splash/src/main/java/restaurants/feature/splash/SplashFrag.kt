@@ -8,11 +8,11 @@ import restaurant.common.presentation.navigation.Fragments
 import restaurant.common.presentation.navigation.fragmentFrom
 import restaurant.common.presentation.ui.frag.BaseFrag
 
-class SplashFrag : BaseFrag<SplashVm>() {
+class SplashFrag : BaseFrag<SplashViewModel>() {
 
     override var layoutId: Int = R.layout.frag_splash
 
-    override val vm: SplashVm by viewModel()
+    override val vm: SplashViewModel by viewModel()
 
     override fun doOnViewCreated() {
         Handler().postDelayed( {

@@ -11,10 +11,10 @@ import restaurants.common.core.util.disposeBy
 import restaurants.common.data.model.RestaurantMapper
 
 val searchModule = module {
-    viewModel { RestaurantsVm(get()) }
+    viewModel { RestaurantsViewModel(get()) }
 }
 
-class RestaurantsVm(dataManager: DataManager) : BaseViewModel(dataManager) {
+class RestaurantsViewModel(dataManager: DataManager) : BaseViewModel(dataManager) {
 
     fun restaurants(callback: (List<Restaurant>) -> Unit) {
         val requestOptions = RequestOptions.Builder()

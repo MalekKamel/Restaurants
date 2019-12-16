@@ -8,9 +8,9 @@ import restaurant.common.presentation.ui.frag.BaseFrag
 import restaurants.common.core.util.linearLayoutManager
 import restaurants.feature.restaurants.di.injectRestaurantsListFeature
 
-class RestaurantsFrag : BaseFrag<RestaurantsVm>() {
+class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
 
-    override val vm: RestaurantsVm by viewModel()
+    override val vm: RestaurantsViewModel by viewModel()
     override var layoutId: Int = R.layout.frag_restaurants
     override var swipeRefreshLayoutId: Int = R.id.swipeRefresh
 

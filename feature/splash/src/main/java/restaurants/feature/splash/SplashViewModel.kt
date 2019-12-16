@@ -10,7 +10,7 @@ import restaurants.common.data.DataManager
  */
 
 val splashModule = module {
-    viewModel { SplashVm(get()) }
+    viewModel { SplashViewModel(get()) }
 }
 
-class SplashVm(dataManager: DataManager) : BaseViewModel(dataManager)
+class SplashViewModel(dataManager: DataManager) : BaseViewModel(dataManager)
