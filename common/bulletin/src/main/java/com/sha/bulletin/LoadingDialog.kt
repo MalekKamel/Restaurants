@@ -1,9 +1,7 @@
-package restaurant.common.presentation.ui.dialog
+package com.sha.bulletin
 
 import android.content.DialogInterface
 import androidx.fragment.app.FragmentActivity
-import restaurant.common.presentation.R
-import restaurant.common.presentation.ui.frag.BaseDialogFrag
 
 object LoadingDialog : BaseDialogFrag() {
 

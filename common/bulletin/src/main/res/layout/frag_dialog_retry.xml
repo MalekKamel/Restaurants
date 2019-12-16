@@ -20,11 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/_10sdp">
+            android:padding="15dp">
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_10sdp" />
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/tvMessage"
@@ -33,30 +33,40 @@
                 android:layout_gravity="center_horizontal"
                 android:textSize="@dimen/common_text_size"
                 android:textStyle="bold"
-                tools:text="Message" />
+                tools:text="Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message " />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_10sdp" />
+                android:layout_height="15dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't show again"
-                android:textSize="@dimen/_10ssp"
-                android:visibility="gone"
-                tools:visibility="visible"/>
-
-            <Button
-                android:id="@+id/btnDismiss"
-                android:text="Dismiss"
-                android:textColor="@color/black_light"
                 android:layout_gravity="end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                />
+                >
+
+                <Button
+                    android:id="@+id/btnRetry"
+                    android:text="@string/retry"
+                    android:textColor="@color/black_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/transparent"
+                    />
+
+                <Button
+                    android:id="@+id/btnDismiss"
+                    android:text="@string/dismiss"
+                    android:textColor="@color/black_light"
+                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/transparent"
+                    />
+
+            </LinearLayout>
 
 
 

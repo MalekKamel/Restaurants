@@ -2,17 +2,18 @@ package restaurant.common.presentation.ui.view
 
 import android.content.Context
 import android.widget.Toast
+import com.sha.bulletin.InfoDialog
+import com.sha.bulletin.RetryDialogFrag
 import restaurant.common.presentation.ui.StatusItem
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurant.common.presentation.ui.dialog.RetryDialogFrag
-import restaurant.common.presentation.ui.dialog.InfoDialog
 import restaurants.common.core.util.FlashbarHelper
 
 interface Alertable {
     fun activity(): BaseActivity?
     fun context(): Context? = activity()
 
-    fun showRetryDialog(message: String, options: RetryDialogFrag.Options = RetryDialogFrag.Options.defaultOptions()) {
+    fun showRetryDialog(message: String,
+                        options: RetryDialogFrag.Options = RetryDialogFrag.Options.defaultOptions()) {
         activity()?.run {
             options.message = message
             RetryDialogFrag.options = options

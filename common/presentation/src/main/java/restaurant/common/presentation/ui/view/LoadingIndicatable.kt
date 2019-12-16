@@ -1,7 +1,7 @@
 package restaurant.common.presentation.ui.view
 
+import com.sha.bulletin.LoadingDialog
 import restaurant.common.presentation.ui.activity.BaseActivity
-import restaurant.common.presentation.ui.dialog.LoadingDialog
 
 interface LoadingIndicatable {
     fun activity(): BaseActivity?
