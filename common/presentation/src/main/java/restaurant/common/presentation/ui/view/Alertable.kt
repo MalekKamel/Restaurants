@@ -3,7 +3,8 @@ package restaurant.common.presentation.ui.view
 import android.content.Context
 import android.widget.Toast
 import com.sha.bulletin.InfoDialog
-import com.sha.bulletin.RetryDialogFrag
+import com.sha.bulletin.InfoSheet
+import com.sha.bulletin.RetryDialog
 import restaurant.common.presentation.ui.StatusItem
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurants.common.core.util.FlashbarHelper
@@ -13,11 +14,11 @@ interface Alertable {
     fun context(): Context? = activity()
 
     fun showRetryDialog(message: String,
-                        options: RetryDialogFrag.Options = RetryDialogFrag.Options.defaultOptions()) {
+                        options: RetryDialog.Options = RetryDialog.Options.defaultOptions()) {
         activity()?.run {
             options.message = message
-            RetryDialogFrag.options = options
-            RetryDialogFrag.show(this)
+            RetryDialog.options = options
+            RetryDialog.show(this)
         }
     }
 
@@ -33,6 +34,8 @@ interface Alertable {
 
     fun showSuccessInFlashBar(msg: String) = showMessageInFlashBar(StatusItem(StatusItem.SUCCESS, msg))
     fun showSuccessInFlashBar(msgRes: Int) = showSuccessInFlashBar(context()!!.getString(msgRes))
+
+    /// >>>>>>>>>  INFO DIALOG
 
     private fun showInfoDialog(options: InfoDialog.Options = InfoDialog.Options.defaultOptions()) {
         if(options.message == null) return
@@ -60,5 +63,34 @@ interface Alertable {
 
     fun showErrorDialog(error: String?) {
         showInfoDialog(InfoDialog.Options.create(InfoDialog.MessageType.EXCEPTION) { message = error })
+    }
+
+    /// >>>>>>>>>  INFO SHEET
+
+    private fun showInfoSheet(options: InfoSheet.Options = InfoSheet.Options.defaultOptions()) {
+        if(options.message == null) return
+        activity()?.run {
+            InfoSheet.options = options
+            InfoSheet.show(this)
+        }
+    }
+    fun showWarningSheet(msg: String?) {
+        showInfoSheet(InfoSheet.Options.create(InfoSheet.MessageType.WARNING) { message = msg })
+    }
+
+    fun showWarningSheet(msgRes: Int) = showWarningSheet(context()?.getString(msgRes))
+
+    fun showMessageSheet(msg: String?) {
+        showInfoSheet(InfoSheet.Options.create(InfoSheet.MessageType.INFO) { message = msg })
+    }
+
+    fun showMessageSheet(msgRes: Int) {
+        showInfoSheet(InfoSheet.Options.create(InfoSheet.MessageType.INFO) { message = context()?.getString(msgRes) })
+    }
+
+    fun showErrorSheet(errorRes: Int) = showErrorSheet(context()?.getString(errorRes))
+
+    fun showErrorSheet(error: String?) {
+        showInfoSheet(InfoSheet.Options.create(InfoSheet.MessageType.EXCEPTION) { message = error })
     }
 }

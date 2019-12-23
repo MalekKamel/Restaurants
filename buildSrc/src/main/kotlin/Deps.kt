@@ -25,13 +25,14 @@ object Versions {
     const val arch_navigationFragment = "1.0.0"
     const val arch_navigationUi = "1.0.0"
     const val androidx_lifeCycle = "2.0.0-rc01"
-    const val sha_formValidator = "1.0.0"
+    const val sha_formValidator = "2.0.1"
     const val sha_navigator = "1.7.0"
     const val sha_rxRequester = "0.7.0"
     const val sha_modelMapper = "0.1.0"
     const val flashBar = "1.0.3"
     const val androidx_coreKtx = "1.1.0"
     const val androidx_paging = "2.0.0-rc01"
+    const val androidx_swiperefreshlayout = "1.0.0"
 
 }
 
@@ -67,6 +68,7 @@ object Deps {
     const val androidx_lifeCycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.androidx_lifeCycle}"
     const val androidx_coreKtx = "androidx.core:core-ktx:${Versions.androidx_coreKtx}"
     const val androidx_paging = "androidx.paging:paging-runtime:${Versions.androidx_paging}"
+    const val androidx_swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.androidx_swiperefreshlayout}"
     // </editor-fold>
 
     // <editor-fold desc="parceler">

@@ -41,6 +41,9 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
         showLoading()
         showLoading()
         hideLoading()
+
+        showWarningSheet("Error in sheet")
+
     }
 
     private fun loadRestaurants() {

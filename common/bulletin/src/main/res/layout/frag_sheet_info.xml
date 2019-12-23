@@ -52,15 +52,13 @@
 
             <Button
                 android:id="@+id/btnDismiss"
-                android:text="Dismiss"
+                android:text="@string/ok"
                 android:textColor="@color/black_light"
                 android:layout_gravity="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 />
-
-
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

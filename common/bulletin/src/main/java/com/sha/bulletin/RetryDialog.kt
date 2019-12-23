@@ -1,11 +1,13 @@
 package com.sha.bulletin
 
 import android.content.DialogInterface
+import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 
-object RetryDialogFrag : BaseDialogFrag() {
+object RetryDialog : AbstractDialog() {
 
     var options: Options? = Options.defaultOptions()
         set(value) {
@@ -24,7 +26,7 @@ object RetryDialogFrag : BaseDialogFrag() {
     private val btnDismiss: TextView
         get() = view!!.findViewById(R.id.btnDismiss)
 
-    override fun doOnViewCreated() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         options?.message?.let { tvMessage.text = it }
         btnRetry.setOnClickListener {
             options?.retryCallback?.invoke()

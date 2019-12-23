@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 
-object InfoDialog : AbstractDialog() {
+object InfoSheet : AbstractSheet() {
     enum class MessageType { INFO, WARNING, EXCEPTION }
     var options: Options? = Options.defaultOptions()
         set(value) {
@@ -15,7 +15,7 @@ object InfoDialog : AbstractDialog() {
             field = value
         }
 
-    override var layoutId: Int = R.layout.frag_dialog_info
+    override var layoutId: Int = R.layout.frag_sheet_info
 
     private val tvMessage: TextView
     get() = view!!.findViewById(R.id.tvMessage)

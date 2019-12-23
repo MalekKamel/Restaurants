@@ -13,10 +13,11 @@ dependencies {
 
     implementation Deps.rx_lifeCycleComponent
 
-    implementation Deps.sha_formValidator
+    api Deps.sha_formValidator
     api Deps.sha_navigator
     api Deps.sha_rxRequester
 
     api Deps.sdp
     api Deps.ssp
+    api Deps.androidx_swiperefreshlayout
 }

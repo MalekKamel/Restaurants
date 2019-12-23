@@ -3,7 +3,7 @@ package com.sha.bulletin
 import android.content.DialogInterface
 import androidx.fragment.app.FragmentActivity
 
-object LoadingDialog : BaseDialogFrag() {
+object LoadingDialog : AbstractDialog() {
 
     override var layoutId: Int = R.layout.frag_dialog_loading
     var options: Options? = Options.defaultOptions()

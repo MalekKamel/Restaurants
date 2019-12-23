@@ -7,5 +7,6 @@
     <string name="offline_internet">Internet connection appears to be offline.</string>
     <string name="no_data_entered_yet">No data entered yet</string>
     <string name="no_memory_free_up_space">You don\'t have enough memory, please free up space first.</string>
+    <string name="ok">OK</string>
 
 </resources>
