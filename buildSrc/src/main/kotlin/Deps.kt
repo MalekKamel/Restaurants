@@ -25,7 +25,7 @@ object Versions {
     const val arch_navigationFragment = "1.0.0"
     const val arch_navigationUi = "1.0.0"
     const val androidx_lifeCycle = "2.0.0-rc01"
-    const val sha_formValidator = "2.0.1"
+    const val sha_formValidator = "2.1.0"
     const val sha_navigator = "1.7.0"
     const val sha_rxRequester = "0.7.0"
     const val sha_modelMapper = "0.1.0"
@@ -102,6 +102,8 @@ object Deps {
     const val materilaDialog  = "com.afollestad.material-dialogs:core:${Versions.materialDialog}"
 
     const val sha_formValidator  = "com.github.ShabanKamell:FormValidator:${Versions.sha_formValidator}"
+    const val sha_formValidator_core  = "com.github.ShabanKamell.FormValidator:core:${Versions.sha_formValidator}"
+    const val sha_formValidator_rx  = "com.github.ShabanKamell.FormValidator:rxjava:${Versions.sha_formValidator}"
     const val sha_navigator = "com.github.ShabanKamell:Navigator:${Versions.sha_navigator}"
     const val sha_rxRequester = "com.github.ShabanKamell:RxRequester:${Versions.sha_rxRequester}"
     const val sha_modelMapper = "com.github.ShabanKamell:ModelMapper:${Versions.sha_modelMapper}"

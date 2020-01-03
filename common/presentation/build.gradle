@@ -13,7 +13,7 @@ dependencies {
 
     implementation Deps.rx_lifeCycleComponent
 
-    api Deps.sha_formValidator
+    api Deps.sha_formValidator_rx
     api Deps.sha_navigator
     api Deps.sha_rxRequester
 
