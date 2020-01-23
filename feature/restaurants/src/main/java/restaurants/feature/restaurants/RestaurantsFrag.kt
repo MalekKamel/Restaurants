@@ -2,6 +2,7 @@ package restaurants.feature.restaurants
 
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
+import com.sha.bulletin.dialog.LoadingDialog
 import kotlinx.android.synthetic.main.frag_restaurants.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import restaurant.common.presentation.ui.frag.BaseFrag
@@ -22,28 +23,9 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
 
     override fun doOnViewCreated() {
         super.doOnViewCreated()
-
         rv = findViewById(R.id.rv)
         rv.linearLayoutManager(context)
-
         loadRestaurants()
-
-        showMessageDialog("Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message ")
-
-        showLoading()
-        showMessageDialog("Message2222")
-
-        showRetryDialog("Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message Message")
-        showLoading()
-        showLoading()
-        hideLoading()
-        hideLoading()
-        showLoading()
-        showLoading()
-        hideLoading()
-
-        showWarningSheet("Error in sheet")
-
     }
 
     private fun loadRestaurants() {
@@ -55,8 +37,15 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
 
     override fun onSwipeRefresh() { loadRestaurants() }
 
-//    override fun showLoading() = toggleRefresh(true)
-//    override fun hideLoading() = toggleRefresh(false)
+    override fun showLoadingDialog(content: String): LoadingDialog? {
+        toggleRefresh(true)
+        return null
+    }
+
+    override fun dismissLoadingDialogs() {
+        toggleRefresh(false)
+    }
+
     private fun toggleRefresh(show: Boolean) { swipeRefresh.isRefreshing = show }
 
 }

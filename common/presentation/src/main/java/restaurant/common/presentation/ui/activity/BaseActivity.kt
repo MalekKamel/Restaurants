@@ -31,6 +31,5 @@ abstract class BaseActivity
         }
     }
 
-    override fun context(): Context = this
     override fun activity(): BaseActivity = this
 }

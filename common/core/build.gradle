@@ -19,7 +19,4 @@ dependencies {
     api Deps.koin_java
     api Deps.koin_scope
     api Deps.koin_viewModel
-
-    implementation Deps.flashBar
-
 }

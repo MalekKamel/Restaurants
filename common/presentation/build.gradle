@@ -1,8 +1,15 @@
 apply from: "$rootDir/${GradleName.commonAndroidLib}"
 
+android {
+    // This configuration enables using @JvmDefault annotation with Kotlin
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+        freeCompilerArgs = ['-Xjvm-default=compatibility']
+    }
+}
+
 dependencies {
     api project(Module.data)
-    api project(Module.bulletin)
 
     implementation Deps.androidx_appCompat
     implementation Deps.androidx_coreKtx
@@ -14,6 +21,7 @@ dependencies {
     implementation Deps.rx_lifeCycleComponent
 
     api Deps.sha_formValidator_rx
+    api Deps.sha_bulletin
     api Deps.sha_navigator
     api Deps.sha_rxRequester
 

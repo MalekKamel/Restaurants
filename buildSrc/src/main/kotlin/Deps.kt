@@ -33,6 +33,7 @@ object Versions {
     const val androidx_coreKtx = "1.1.0"
     const val androidx_paging = "2.0.0-rc01"
     const val androidx_swiperefreshlayout = "1.0.0"
+    const val sha_bulletin = "0.1.3"
 
 }
 
@@ -107,6 +108,7 @@ object Deps {
     const val sha_navigator = "com.github.ShabanKamell:Navigator:${Versions.sha_navigator}"
     const val sha_rxRequester = "com.github.ShabanKamell:RxRequester:${Versions.sha_rxRequester}"
     const val sha_modelMapper = "com.github.ShabanKamell:ModelMapper:${Versions.sha_modelMapper}"
+    const val sha_bulletin = "com.github.ShabanKamell:Bulletin:${Versions.sha_bulletin}"
 
     const val flashBar = "com.andrognito.flashbar:flashbar:${Versions.flashBar}"
 
