@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.activity.BaseActivity
@@ -27,7 +28,19 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        vm.viewInterface = this
+        setupVm()
+    }
+
+    private fun setupVm() {
+        vm.toggleLoading.observe(this, Observer { show ->
+            if (show) {
+                showLoadingDialog()
+                return@Observer
+            }
+            dismissLoadingDialogs()
+        })
+        vm.showError.observe(this, Observer { showErrorInFlashBar(it) })
+        vm.showErrorRes.observe(this, Observer { showErrorInFlashBar(it) })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
