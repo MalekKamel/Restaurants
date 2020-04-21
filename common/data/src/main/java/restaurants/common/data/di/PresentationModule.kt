@@ -12,8 +12,8 @@ import restaurants.common.data.DataManager
 import restaurants.common.data.network.api.ApiInterface
 import restaurants.common.data.network.interceptor.TokenInterceptor
 import restaurants.common.data.pref.SharedPref
-import restaurants.common.data.restaurant.RestaurantDataSrc
-import restaurants.common.data.restaurant.RestaurantsRepo
+import restaurants.common.data.domain.restaurant.RestaurantDataSrc
+import restaurants.common.data.domain.restaurant.RestaurantsRepo
 import restaurants.common.data.rx.SchedulerProvider
 import restaurants.common.data.rx.SchedulerProviderImpl
 import retrofit2.Retrofit

@@ -1,4 +1,4 @@
-package restaurants.common.data.restaurant
+package restaurants.common.data.domain.restaurant
 
 import restaurants.common.data.model.RestaurantResponse
 import restaurants.common.data.network.api.ApiInterface
