@@ -12,15 +12,11 @@ Restaurants app represents a real world app example: it provides a fairly comple
  
  #### Feture
  
- This category contains all feature modules. The main module (app) logically lies under this category.
+This category contains all feature modules. Each feature module represents a screen in the application. The main module (app) logically lies under this category. The main module (app) logically lies under this category
  
  #### Common
  
  The modules that are visible to all **feature** modules lies under **common** category. There are 3 modules in **common** category, **presentation**, **data**, and **core**
- 
- 
- 
- 
  
  
  ### Credit
