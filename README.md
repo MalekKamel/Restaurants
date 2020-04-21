@@ -3,7 +3,26 @@
 <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/raw/home.png" height="500">
 
 
-Restaurants represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
+Restaurants app represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
+ 
+ ## Modular Architecture
+ 
+ <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/modular-arch-diagram2.png" height="600">
+ 
+ The app modules are divided two main categories:
+ 
+ #### Feture
+ 
+ This category contains all feature modules. The main module (app) logically lies under this category.
+ 
+ #### Common
+ 
+ The modules that are visible to all **feature** modules lies under **common** category. There are 3 modules in **common** category, **presentation**, **data**, and **core**
+ 
+ 
+ 
+ 
+ 
  
  ### Credit
 - [ ] [Build a Modular Android App Architecture (Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww)
