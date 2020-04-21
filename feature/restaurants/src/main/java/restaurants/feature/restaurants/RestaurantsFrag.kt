@@ -1,7 +1,7 @@
 package restaurants.feature.restaurants
 
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.Observer
 import com.sha.bulletin.dialog.LoadingDialog
 import kotlinx.android.synthetic.main.frag_restaurants.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -14,8 +14,6 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
     override var layoutId: Int = R.layout.frag_restaurants
     override var swipeRefreshLayoutId: Int = R.id.swipeRefresh
 
-    lateinit var rv: RecyclerView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         injectFeature()
         super.onCreate(savedInstanceState)
@@ -23,16 +21,24 @@ class RestaurantsFrag : BaseFrag<RestaurantsViewModel>() {
 
     override fun doOnViewCreated() {
         super.doOnViewCreated()
-        rv = findViewById(R.id.rv)
-        rv.linearLayoutManager(context)
+        setupUi()
+        observeVm()
         loadRestaurants()
     }
 
-    private fun loadRestaurants() {
-        vm.restaurants {
+    private fun setupUi() {
+        rv.linearLayoutManager(context)
+    }
+
+    private fun observeVm() {
+        vm.restaurants.observe(this, Observer {
             rv.adapter = RestaurantsAdapter(list = it, viewInterface = this)
             rv.scheduleLayoutAnimation()
-        }
+        })
+    }
+
+    private fun loadRestaurants() {
+        vm.restaurants()
     }
 
     override fun onSwipeRefresh() { loadRestaurants() }

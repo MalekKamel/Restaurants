@@ -1,10 +1,8 @@
 package restaurant.common.presentation.ui.activity
 
-import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import restaurant.common.presentation.ui.view.ViewInterface
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 
 abstract class BaseActivity

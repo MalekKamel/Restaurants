@@ -3,7 +3,6 @@ package restaurants.common.core.picasso
 import android.graphics.*
 import com.squareup.picasso.Transformation
 import restaurants.common.core.io.BitmapUtil
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 
 class CircleTransform : Transformation {

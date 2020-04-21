@@ -1,7 +1,5 @@
 package restaurants.common.core.util
 
-import java.lang.Exception
-
 /**
  * Created by Sha on 10/15/17.
  */

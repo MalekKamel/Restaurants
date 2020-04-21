@@ -2,7 +2,6 @@ package restaurant.common.presentation.ui.adapter
 
 import android.view.ViewGroup
 import restaurant.common.presentation.ui.view.ViewInterface
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 
 /**

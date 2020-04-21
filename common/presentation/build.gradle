@@ -19,11 +19,12 @@ dependencies {
     api Deps.androidx_constraintLayout
 
     implementation Deps.rx_lifeCycleComponent
+    api Deps.androidx_ViewModelExt
 
     api Deps.sha_formValidator_rx
     api Deps.sha_bulletin
     api Deps.sha_navigator
-    api Deps.sha_rxRequester
+    api Deps.sha_coroutineRequester
 
     api Deps.sdp
     api Deps.ssp

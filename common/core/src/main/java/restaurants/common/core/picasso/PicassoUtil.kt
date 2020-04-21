@@ -9,7 +9,6 @@ import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
 import org.koin.java.KoinJavaComponent
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 import java.io.File
 

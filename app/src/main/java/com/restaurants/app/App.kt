@@ -6,7 +6,6 @@ import android.content.Context
 import androidx.annotation.StringRes
 import com.restaurants.app.di.KoinInjector
 import com.sha.kamel.navigator.NavigatorOptions
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 
 /**

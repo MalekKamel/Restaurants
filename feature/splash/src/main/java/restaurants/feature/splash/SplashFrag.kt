@@ -2,7 +2,6 @@ package restaurants.feature.splash
 
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.sha.kamel.navigator.FragmentNavigator
 import org.koin.android.viewmodel.ext.android.viewModel

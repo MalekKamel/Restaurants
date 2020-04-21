@@ -3,7 +3,6 @@ package restaurant.common.presentation.ui.adapter
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import restaurant.common.presentation.ui.view.ViewInterface
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 
 

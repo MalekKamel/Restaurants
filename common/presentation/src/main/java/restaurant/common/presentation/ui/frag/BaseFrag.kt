@@ -12,7 +12,6 @@ import restaurant.common.presentation.R
 import restaurant.common.presentation.ui.activity.BaseActivity
 import restaurant.common.presentation.ui.view.ViewInterface
 import restaurant.common.presentation.ui.vm.BaseViewModel
-import restaurants.common.core.util.CrashlyticsUtil
 import restaurants.common.core.util.reportAndPrint
 
 abstract class BaseFrag<VM: BaseViewModel> : Fragment(), ViewInterface {
