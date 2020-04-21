@@ -1,5 +1,5 @@
 # Presentation Module
 
-Presentation modules encapsulates all UI classes including base views and shared view models.
+Presentation modules contains network, local database, SharedPreferences, model classes, and any data-related classes.
 
 <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/modular-arch-diagram2.png" height="600">
