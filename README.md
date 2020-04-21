@@ -18,7 +18,7 @@ This category contains all feature modules. Each feature module represents a scr
  
  The modules that are visible to all **feature** modules lies under **common** category. There are 3 modules in **common** category, **presentation**, **data**, and **core**
  
- ### Google Architecture Components
+ ## Google Architecture Components
  
  The app implements Google architecture components. Visit the [Guide](https://developer.android.com/jetpack/docs/guide) for the details.
  
