@@ -1,10 +1,9 @@
 # Restaurants
 
-<img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/raw/home.png" height="500">
-
-
 Restaurants app represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
  
+<img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/raw/home.png" height="500">
+
  ## Modular Architecture
  
  <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/modular-arch-diagram2.png" height="600">
