@@ -24,6 +24,9 @@ This category contains all feature modules. Each feature module represents a scr
  
  <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/google-architecture-components.png" height="500">
 
+## README
+
+Each module has its own `README.md` file that documents the module.
  
  ### Credit
 - [ ] [Build a Modular Android App Architecture (Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww)
