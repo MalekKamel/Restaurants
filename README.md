@@ -20,7 +20,10 @@ This category contains all feature modules. Each feature module represents a scr
  
  ### Google Architecture Components
  
- The app implements Google architecture components. For more info, visit the [Guide](https://developer.android.com/jetpack/docs/guide).
+ The app implements Google architecture components. Visit the [Guide](https://developer.android.com/jetpack/docs/guide) for the details.
+ 
+ <img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/google-architecture-components.png" height="500">
+
  
  ### Credit
 - [ ] [Build a Modular Android App Architecture (Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww)
